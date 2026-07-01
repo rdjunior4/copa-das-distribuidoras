@@ -313,39 +313,110 @@ export default function RodadasPage() {
                             <Users className="w-3 h-3" />
                             Jogadores - {selecao.jogadores.length} ativos
                           </h4>
-                          <div className="grid gap-1.5 md:gap-2">
-                            {selecao.jogadores
-                              .sort((a, b) => b.vendaFaturada - a.vendaFaturada)
-                              .map((jogador, jIndex) => (
-                                <div 
-                                  key={jogador.rca}
-                                  className="flex items-center justify-between p-2.5 md:p-3 rounded-lg bg-white/[0.02]"
-                                >
-                                  <div className="flex items-center gap-2 md:gap-3">
-                                    <div className="w-7 h-7 md:w-8 md:h-8 rounded-lg flex items-center justify-center text-[10px] md:text-xs font-bold" style={{ color: selecao.cor, backgroundColor: `${selecao.cor}10` }}>
-                                      {jIndex + 1}º
-                                    </div>
-                                    <div className="min-w-0">
-                                      <p className="font-medium text-xs md:text-sm truncate">{jogador.nome}</p>
-                                      <p className="text-[10px] md:text-xs text-gray-400">RCA {jogador.rca}</p>
-                                    </div>
-                                  </div>
-                                  <div className="flex items-center gap-3 md:gap-4">
-                                    <div className="text-right">
-                                      <p className="font-bold text-xs md:text-sm" style={{ color: selecao.cor }}>
-                                        R$ {(jogador.vendaFaturada / 1000).toFixed(1)}k
-                                      </p>
-                                      <p className="text-[10px] md:text-xs text-gray-400">faturamento</p>
-                                    </div>
-                                    <div className="text-right">
-                                      <p className="font-bold text-xs md:text-sm" style={{ color: selecao.cor }}>
-                                        {jogador.gols}
-                                      </p>
-                                      <p className="text-[10px] md:text-xs text-gray-400">gols</p>
-                                    </div>
-                                  </div>
-                                </div>
-                              ))}
+                          
+                          {/* Tabela de Jogadores com Métricas */}
+                          <div className="overflow-x-auto">
+                            <table className="w-full text-[10px] md:text-xs">
+                              <thead>
+                                <tr className="border-b border-white/[0.06]">
+                                  <th className="text-left py-1.5 md:py-2 px-1.5 md:px-2 text-gray-400 font-medium">#</th>
+                                  <th className="text-left py-1.5 md:py-2 px-1.5 md:px-2 text-gray-400 font-medium">Jogador</th>
+                                  <th className="text-right py-1.5 md:py-2 px-1 md:px-2 text-gray-400 font-medium">Fatur.</th>
+                                  <th className="text-center py-1.5 md:py-2 px-1 md:px-2 font-medium" title="Gols por Vendas">
+                                    <span className="text-green-400">⚽</span>
+                                    <span className="hidden md:inline text-gray-400 ml-0.5">Gols</span>
+                                  </th>
+                                  <th className="text-center py-1.5 md:py-2 px-1 md:px-2 font-medium" title="Assistências (Novo Cliente)">
+                                    <span className="text-blue-400">👟</span>
+                                    <span className="hidden md:inline text-gray-400 ml-0.5">Assist.</span>
+                                  </th>
+                                  <th className="text-center py-1.5 md:py-2 px-1 md:px-2 font-medium" title="Virada de Jogo (Reativação)">
+                                    <span className="text-purple-400">⭐</span>
+                                    <span className="hidden md:inline text-gray-400 ml-0.5">Virada</span>
+                                  </th>
+                                  <th className="text-center py-1.5 md:py-2 px-1 md:px-2 font-medium" title="Jogada Ensaíada (Mix Estratégico)">
+                                    <span className="text-yellow-400">⚡</span>
+                                    <span className="hidden md:inline text-gray-400 ml-0.5">Mix</span>
+                                  </th>
+                                  <th className="text-center py-1.5 md:py-2 px-1 md:px-2 font-medium" title="Craque da Partida (+5 Gols)">
+                                    <span className="text-copa-gold">🏆</span>
+                                    <span className="hidden md:inline text-gray-400 ml-0.5">Craque</span>
+                                  </th>
+                                  <th className="text-center py-1.5 md:py-2 px-1 md:px-2 font-medium" title="Cartão Amarelo (-3 Gols)">
+                                    <span className="text-orange-400">🟨</span>
+                                    <span className="hidden md:inline text-gray-400 ml-0.5">Amarelo</span>
+                                  </th>
+                                  <th className="text-center py-1.5 md:py-2 px-1 md:px-2 font-medium" title="Cartão Vermelho (-5 Gols)">
+                                    <span className="text-red-400">🟥</span>
+                                    <span className="hidden md:inline text-gray-400 ml-0.5">Vermelho</span>
+                                  </th>
+                                  <th className="text-center py-1.5 md:py-2 px-1.5 md:px-2 text-white font-bold">Total</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {selecao.jogadores
+                                  .sort((a, b) => b.vendaFaturada - a.vendaFaturada)
+                                  .map((jogador, jIndex) => (
+                                    <tr 
+                                      key={jogador.rca}
+                                      className="border-b border-white/[0.02] hover:bg-white/[0.02]"
+                                    >
+                                      <td className="py-2 md:py-2.5 px-1.5 md:px-2 font-bold" style={{ color: selecao.cor }}>
+                                        {jIndex + 1}º
+                                      </td>
+                                      <td className="py-2 md:py-2.5 px-1.5 md:px-2">
+                                        <p className="font-medium text-[11px] md:text-xs text-white truncate max-w-[120px] md:max-w-none">{jogador.nome}</p>
+                                        <p className="text-[9px] md:text-[10px] text-gray-500">RCA {jogador.rca}</p>
+                                      </td>
+                                      <td className="py-2 md:py-2.5 px-1 md:px-2 text-right">
+                                        <span className="font-bold text-copa-green text-[11px] md:text-xs">
+                                          R$ {(jogador.vendaFaturada / 1000).toFixed(1)}k
+                                        </span>
+                                      </td>
+                                      <td className="py-2 md:py-2.5 px-1 md:px-2 text-center">
+                                        <span className="font-bold text-green-400">{jogador.metricas?.golsPorVendas || 0}</span>
+                                      </td>
+                                      <td className="py-2 md:py-2.5 px-1 md:px-2 text-center">
+                                        <span className="font-bold text-blue-400">{jogador.metricas?.assistencias || 0}</span>
+                                      </td>
+                                      <td className="py-2 md:py-2.5 px-1 md:px-2 text-center">
+                                        <span className="font-bold text-purple-400">{jogador.metricas?.viradasDeJogo || 0}</span>
+                                      </td>
+                                      <td className="py-2 md:py-2.5 px-1 md:px-2 text-center">
+                                        <span className="font-bold text-yellow-400">{jogador.metricas?.jogadasEnsaiadas || 0}</span>
+                                      </td>
+                                      <td className="py-2 md:py-2.5 px-1 md:px-2 text-center">
+                                        <span className="font-bold text-copa-gold">{jogador.metricas?.craqueDaPartida || 0}</span>
+                                      </td>
+                                      <td className="py-2 md:py-2.5 px-1 md:px-2 text-center">
+                                        <span className="font-bold text-orange-400">{jogador.metricas?.cartaoAmarelo || 0}</span>
+                                      </td>
+                                      <td className="py-2 md:py-2.5 px-1 md:px-2 text-center">
+                                        <span className="font-bold text-red-400">{jogador.metricas?.cartaoVermelho || 0}</span>
+                                      </td>
+                                      <td className="py-2 md:py-2.5 px-1.5 md:px-2 text-center">
+                                        <span className="px-1.5 md:px-2 py-0.5 rounded font-bold text-[11px] md:text-xs" style={{ backgroundColor: `${selecao.cor}20`, color: selecao.cor }}>
+                                          {jogador.gols}
+                                        </span>
+                                      </td>
+                                    </tr>
+                                  ))}
+                              </tbody>
+                            </table>
+                          </div>
+
+                          {/* Legenda */}
+                          <div className="mt-3 pt-3 border-t border-white/[0.04]">
+                            <p className="text-[9px] md:text-[10px] text-gray-500 mb-1.5 font-medium">LEGENDA:</p>
+                            <div className="grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-2 text-[9px] md:text-[10px]">
+                              <span className="text-gray-400"><span className="text-green-400">⚽</span> R$10k = 1 gol</span>
+                              <span className="text-gray-400"><span className="text-blue-400">👟</span> Novo cliente = 2 gols</span>
+                              <span className="text-gray-400"><span className="text-purple-400">⭐</span> Reativação = 3 gols</span>
+                              <span className="text-gray-400"><span className="text-yellow-400">⚡</span> Mix estratégico = 2 gols</span>
+                              <span className="text-gray-400"><span className="text-copa-gold">🏆</span> Craque = +5 gols</span>
+                              <span className="text-gray-400"><span className="text-orange-400">🟨</span> Amarelo = -3 gols</span>
+                              <span className="text-gray-400"><span className="text-red-400">🟥</span> Vermelho = -5 gols</span>
+                            </div>
                           </div>
                         </div>
                       </motion.div>

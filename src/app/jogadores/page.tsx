@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Users, 
   TrendingUp, 
@@ -9,16 +9,27 @@ import {
   Award,
   Search,
   ChevronDown,
-  Shirt
+  Shirt,
+  ChevronUp
 } from 'lucide-react';
 import { Navbar } from '@/components/Navbar';
 import rodadasData from '@/../public/data/rodadas.json';
 
+interface Metricas {
+  golsPorVendas: number;
+  assistencias: number;
+  viradasDeJogo: number;
+  jogadasEnsaiadas: number;
+  craqueDaPartida: number;
+  cartaoAmarelo: number;
+  cartaoVermelho: number;
+}
+
 export default function JogadoresPage() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedEquipe, setSelectedEquipe] = useState<string>('all');
-  const [selectedRodada, setSelectedRodada] = useState<number | 'accumulated'>('accumulated');
   const [sortBy, setSortBy] = useState<'gols' | 'vendas'>('gols');
+  const [expandedPlayer, setExpandedPlayer] = useState<string | null>(null);
 
   const allEquipes = rodadasData.rodadas[0].selecoes.map(s => ({
     nome: s.nome,
@@ -26,7 +37,11 @@ export default function JogadoresPage() {
   }));
 
   const jogadoresMap = useMemo(() => {
-    const map = new Map<string, { rca: number; nome: string; equipe: string; cor: string; vendaR1: number; vendaR2: number; golsR1: number; golsR2: number }>();
+    const map = new Map<string, { 
+      rca: number; nome: string; equipe: string; cor: string; 
+      vendaR1: number; vendaR2: number; golsR1: number; golsR2: number;
+      metricasR1: Metricas | null; metricasR2: Metricas | null;
+    }>();
 
     for (const rodada of rodadasData.rodadas) {
       for (const selecao of rodada.selecoes) {
@@ -37,9 +52,11 @@ export default function JogadoresPage() {
             if (rodada.numero === 1) {
               existing.vendaR1 = jogador.vendaFaturada;
               existing.golsR1 = jogador.gols;
+              existing.metricasR1 = jogador.metricas || null;
             } else {
               existing.vendaR2 = jogador.vendaFaturada;
               existing.golsR2 = jogador.gols;
+              existing.metricasR2 = jogador.metricas || null;
             }
           } else {
             map.set(key, {
@@ -51,6 +68,8 @@ export default function JogadoresPage() {
               vendaR2: rodada.numero === 2 ? jogador.vendaFaturada : 0,
               golsR1: rodada.numero === 1 ? jogador.gols : 0,
               golsR2: rodada.numero === 2 ? jogador.gols : 0,
+              metricasR1: rodada.numero === 1 ? (jogador.metricas || null) : null,
+              metricasR2: rodada.numero === 2 ? (jogador.metricas || null) : null,
             });
           }
         }
@@ -65,6 +84,15 @@ export default function JogadoresPage() {
       ...j,
       gols: j.golsR1 + j.golsR2,
       vendas: j.vendaR1 + j.vendaR2,
+      metricasAcumuladas: {
+        golsPorVendas: (j.metricasR1?.golsPorVendas || 0) + (j.metricasR2?.golsPorVendas || 0),
+        assistencias: (j.metricasR1?.assistencias || 0) + (j.metricasR2?.assistencias || 0),
+        viradasDeJogo: (j.metricasR1?.viradasDeJogo || 0) + (j.metricasR2?.viradasDeJogo || 0),
+        jogadasEnsaiadas: (j.metricasR1?.jogadasEnsaiadas || 0) + (j.metricasR2?.jogadasEnsaiadas || 0),
+        craqueDaPartida: (j.metricasR1?.craqueDaPartida || 0) + (j.metricasR2?.craqueDaPartida || 0),
+        cartaoAmarelo: (j.metricasR1?.cartaoAmarelo || 0) + (j.metricasR2?.cartaoAmarelo || 0),
+        cartaoVermelho: (j.metricasR1?.cartaoVermelho || 0) + (j.metricasR2?.cartaoVermelho || 0),
+      }
     }));
   }, [jogadoresMap]);
 
@@ -162,11 +190,228 @@ export default function JogadoresPage() {
           </motion.div>
         )}
 
-        {/* Filtros */}
+        {/* Tabela de Pontuação */}
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.25 }}
+          className="glass-card p-4 md:p-5 mb-4 md:mb-6"
+        >
+          <h2 className="text-base md:text-lg font-display font-bold mb-3 md:mb-4 gradient-text">
+            COMO MARCAR PONTOS
+          </h2>
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs md:text-sm">
+              <thead>
+                <tr className="border-b border-white/[0.06]">
+                  <th className="text-left py-2 md:py-3 px-2 md:px-3 text-gray-400 font-medium">Ação</th>
+                  <th className="text-center py-2 md:py-3 px-2 md:px-3 text-gray-400 font-medium">Nome na Copa</th>
+                  <th className="text-center py-2 md:py-3 px-2 md:px-3 text-gray-400 font-medium">Pontuação</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-white/[0.03]">
+                  <td className="py-2.5 md:py-3 px-2 md:px-3">
+                    <div className="flex items-center gap-2">
+                      <span className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 text-[10px] md:text-xs">$</span>
+                      <span className="text-white text-[11px] md:text-sm">R$ 10.000 em vendas</span>
+                    </div>
+                  </td>
+                  <td className="py-2.5 md:py-3 px-2 md:px-3 text-center">
+                    <div className="flex items-center justify-center gap-1.5">
+                      <span className="text-base md:text-lg">⚽</span>
+                      <span className="font-bold text-green-400 text-[11px] md:text-sm">GOL</span>
+                    </div>
+                  </td>
+                  <td className="py-2.5 md:py-3 px-2 md:px-3 text-center">
+                    <span className="font-bold text-white text-[11px] md:text-sm">1 Gol</span>
+                  </td>
+                </tr>
+                <tr className="border-b border-white/[0.03]">
+                  <td className="py-2.5 md:py-3 px-2 md:px-3">
+                    <div className="flex items-center gap-2">
+                      <span className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 text-[10px] md:text-xs">👥</span>
+                      <span className="text-white text-[11px] md:text-sm">Novo cliente positivado</span>
+                    </div>
+                  </td>
+                  <td className="py-2.5 md:py-3 px-2 md:px-3 text-center">
+                    <div className="flex items-center justify-center gap-1.5">
+                      <span className="text-base md:text-lg">👟</span>
+                      <span className="font-bold text-blue-400 text-[11px] md:text-sm">ASSISTÊNCIA</span>
+                    </div>
+                  </td>
+                  <td className="py-2.5 md:py-3 px-2 md:px-3 text-center">
+                    <span className="font-bold text-white text-[11px] md:text-sm">2 Gols</span>
+                  </td>
+                </tr>
+                <tr className="border-b border-white/[0.03]">
+                  <td className="py-2.5 md:py-3 px-2 md:px-3">
+                    <div className="flex items-center gap-2">
+                      <span className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 text-[10px] md:text-xs">🔄</span>
+                      <span className="text-white text-[11px] md:text-sm">Cliente reativado</span>
+                    </div>
+                  </td>
+                  <td className="py-2.5 md:py-3 px-2 md:px-3 text-center">
+                    <div className="flex items-center justify-center gap-1.5">
+                      <span className="text-base md:text-lg">⭐</span>
+                      <span className="font-bold text-purple-400 text-[11px] md:text-sm">VIRADA DE JOGO</span>
+                    </div>
+                  </td>
+                  <td className="py-2.5 md:py-3 px-2 md:px-3 text-center">
+                    <span className="font-bold text-white text-[11px] md:text-sm">3 Gols</span>
+                  </td>
+                </tr>
+                <tr className="border-b border-white/[0.03]">
+                  <td className="py-2.5 md:py-3 px-2 md:px-3">
+                    <div className="flex items-center gap-2">
+                      <span className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-yellow-500/20 flex items-center justify-center text-yellow-400 text-[10px] md:text-xs">🛒</span>
+                      <span className="text-white text-[11px] md:text-sm">Venda de mix estratégico</span>
+                    </div>
+                  </td>
+                  <td className="py-2.5 md:py-3 px-2 md:px-3 text-center">
+                    <div className="flex items-center justify-center gap-1.5">
+                      <span className="text-base md:text-lg">⚡</span>
+                      <span className="font-bold text-yellow-400 text-[11px] md:text-sm">JOGADA ENSAIADA</span>
+                    </div>
+                  </td>
+                  <td className="py-2.5 md:py-3 px-2 md:px-3 text-center">
+                    <span className="font-bold text-white text-[11px] md:text-sm">2 Gols</span>
+                  </td>
+                </tr>
+                <tr className="border-b border-white/[0.03] bg-white/[0.02]">
+                  <td className="py-2.5 md:py-3 px-2 md:px-3">
+                    <div className="flex items-center gap-2">
+                      <span className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-green-500/20 flex items-center justify-center text-green-400 text-[10px] md:text-xs">⭐</span>
+                      <span className="text-white text-[11px] md:text-sm">Melhor vendedor da rodada<br/><span className="text-[9px] md:text-[10px] text-gray-400">(efetivar 3 ou mais ações)</span></span>
+                    </div>
+                  </td>
+                  <td className="py-2.5 md:py-3 px-2 md:px-3 text-center">
+                    <div className="flex items-center justify-center gap-1.5">
+                      <span className="text-base md:text-lg">🏆</span>
+                      <span className="font-bold text-green-400 text-[11px] md:text-sm">CRAQUE DA PARTIDA</span>
+                    </div>
+                  </td>
+                  <td className="py-2.5 md:py-3 px-2 md:px-3 text-center">
+                    <span className="font-bold text-green-400 text-[11px] md:text-sm">+5 Gols</span>
+                  </td>
+                </tr>
+                <tr className="border-b border-white/[0.03] bg-orange-500/5">
+                  <td className="py-2.5 md:py-3 px-2 md:px-3">
+                    <div className="flex items-center gap-2">
+                      <span className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-400 text-[10px] md:text-xs">⚠️</span>
+                      <span className="text-white text-[11px] md:text-sm">Perda de cliente ativo<br/><span className="text-[9px] md:text-[10px] text-gray-400">(efetivado no mês anterior)</span></span>
+                    </div>
+                  </td>
+                  <td className="py-2.5 md:py-3 px-2 md:px-3 text-center">
+                    <div className="flex items-center justify-center gap-1.5">
+                      <span className="text-base md:text-lg">🟨</span>
+                      <span className="font-bold text-orange-400 text-[11px] md:text-sm">CARTÃO AMARELO</span>
+                    </div>
+                  </td>
+                  <td className="py-2.5 md:py-3 px-2 md:px-3 text-center">
+                    <span className="font-bold text-orange-400 text-[11px] md:text-sm">-3 Gols</span>
+                  </td>
+                </tr>
+                <tr className="bg-red-500/5">
+                  <td className="py-2.5 md:py-3 px-2 md:px-3">
+                    <div className="flex items-center gap-2">
+                      <span className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-red-500/20 flex items-center justify-center text-red-400 text-[10px] md:text-xs">❗</span>
+                      <span className="text-white text-[11px] md:text-sm">2 maiores com inadimplência</span>
+                    </div>
+                  </td>
+                  <td className="py-2.5 md:py-3 px-2 md:px-3 text-center">
+                    <div className="flex items-center justify-center gap-1.5">
+                      <span className="text-base md:text-lg">🟥</span>
+                      <span className="font-bold text-red-400 text-[11px] md:text-sm">CARTÃO VERMELHO</span>
+                    </div>
+                  </td>
+                  <td className="py-2.5 md:py-3 px-2 md:px-3 text-center">
+                    <span className="font-bold text-red-400 text-[11px] md:text-sm">-5 Gols</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </motion.div>
+
+        {/* Políticas Oficiais */}
         <motion.div 
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
+          className="mb-4 md:mb-6"
+        >
+          <h2 className="text-base md:text-lg font-display font-bold mb-3 md:mb-4 gradient-text">
+            POLÍTICAS OFICIAIS DA COPA
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {/* Craque da Partida */}
+            <div className="glass-card p-4 border-t-3 border-copa-gold">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-copa-gold/20 flex items-center justify-center">
+                  <span className="text-lg md:text-xl">🏆</span>
+                </div>
+                <div>
+                  <p className="text-[10px] md:text-xs text-gray-400">POLÍTICA DO</p>
+                  <p className="text-xs md:text-sm font-bold text-copa-gold">CRAQUE DA PARTIDA</p>
+                </div>
+              </div>
+              <p className="text-[10px] md:text-xs text-gray-300 mb-3">
+                Concedido ao jogador que efetivar <span className="text-copa-gold font-bold">3 ou mais ações pontuáveis</span> na rodada.
+              </p>
+              <div className="text-center py-2 rounded-lg bg-copa-gold/10 border border-copa-gold/20">
+                <p className="text-lg md:text-xl font-bold text-copa-gold">+5 GOLS</p>
+                <p className="text-[9px] md:text-[10px] text-gray-400">para o melhor vendedor</p>
+              </div>
+            </div>
+
+            {/* Cartão Amarelo */}
+            <div className="glass-card p-4 border-t-3 border-orange-400">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-orange-400/20 flex items-center justify-center">
+                  <span className="text-lg md:text-xl">🟨</span>
+                </div>
+                <div>
+                  <p className="text-[10px] md:text-xs text-gray-400">POLÍTICA DO</p>
+                  <p className="text-xs md:text-sm font-bold text-orange-400">CARTÃO AMARELO</p>
+                </div>
+              </div>
+              <p className="text-[10px] md:text-xs text-gray-300 mb-3">
+                Cliente efetivado no mês anterior mas não efetivado na rodada atual.
+              </p>
+              <div className="text-center py-2 rounded-lg bg-orange-400/10 border border-orange-400/20">
+                <p className="text-lg md:text-xl font-bold text-orange-400">-3 GOLS</p>
+                <p className="text-[9px] md:text-[10px] text-gray-400">por cliente perdido</p>
+              </div>
+            </div>
+
+            {/* Cartão Vermelho */}
+            <div className="glass-card p-4 border-t-3 border-red-500">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-red-500/20 flex items-center justify-center">
+                  <span className="text-lg md:text-xl">🟥</span>
+                </div>
+                <div>
+                  <p className="text-[10px] md:text-xs text-gray-400">POLÍTICA DO</p>
+                  <p className="text-xs md:text-sm font-bold text-red-500">CARTÃO VERMELHO</p>
+                </div>
+              </div>
+              <p className="text-[10px] md:text-xs text-gray-300 mb-3">
+                Os 2 jogadores com maior inadimplência na rodada recebem penalidade.
+              </p>
+              <div className="text-center py-2 rounded-lg bg-red-500/10 border border-red-500/20">
+                <p className="text-lg md:text-xl font-bold text-red-500">-5 GOLS</p>
+                <p className="text-[9px] md:text-[10px] text-gray-400">para cada jogador</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Filtros */}
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35 }}
           className="glass-card p-3 md:p-4 mb-4 md:mb-6"
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
@@ -212,70 +457,215 @@ export default function JogadoresPage() {
           </div>
         </motion.div>
 
-        {/* Lista de Jogadores */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
-          {filteredJogadores.map((jogador, index) => (
-            <motion.div
-              key={`${jogador.rca}-${jogador.equipe}`}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 + index * 0.03 }}
-              className="glass-card-hover p-3 md:p-4 relative overflow-hidden"
-              style={{ borderColor: `${jogador.cor}33` }}
-            >
-              <div className="relative z-10">
-                {/* Header */}
-                <div className="flex items-start justify-between mb-3">
-                  <div className="min-w-0 flex-1">
-                    <h3 className="text-sm md:text-base font-bold truncate" style={{ color: jogador.cor }}>
-                      {jogador.nome}
-                    </h3>
-                    <p className="text-[10px] md:text-xs text-gray-400">
-                      {jogador.equipe} • RCA {jogador.rca}
-                    </p>
-                  </div>
+        {/* Lista de Jogadores - Ranking */}
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="glass-card overflow-hidden"
+        >
+          <div className="px-3 py-2.5 md:px-4 md:py-3 border-b border-white/[0.06]">
+            <div className="flex items-center gap-2">
+              <Users className="w-4 h-4 text-copa-green" />
+              <span className="text-xs md:text-sm font-bold text-copa-green">
+                JOGADORES - {filteredJogadores.length} ATIVOS
+              </span>
+            </div>
+          </div>
+          
+          <div className="divide-y divide-white/[0.03]">
+            {filteredJogadores.map((jogador, index) => {
+              const isExpanded = expandedPlayer === `${jogador.rca}-${jogador.equipe}`;
+              return (
+                <motion.div
+                  key={`${jogador.rca}-${jogador.equipe}`}
+                  initial={{ opacity: 0, x: -10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.45 + index * 0.02 }}
+                  className="hover:bg-white/[0.02] transition-colors"
+                  style={{ borderLeft: `3px solid ${jogador.cor}` }}
+                >
+                  {/* Player Row */}
                   <div 
-                    className="w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center text-lg md:text-xl font-bold flex-shrink-0 ml-2"
-                    style={{ 
-                      backgroundColor: `${jogador.cor}20`,
-                      color: jogador.cor 
-                    }}
+                    className="flex items-center gap-3 px-3 py-3 md:px-4 md:py-3.5 cursor-pointer"
+                    onClick={() => setExpandedPlayer(isExpanded ? null : `${jogador.rca}-${jogador.equipe}`)}
                   >
-                    {jogador.gols}
-                  </div>
-                </div>
-
-                {/* Stats Compactas */}
-                <div className="grid grid-cols-2 gap-2 mb-3">
-                  <div className="p-2 rounded-lg bg-white/[0.03]">
-                    <div className="flex items-center gap-1 mb-0.5">
-                      <Target className="w-3 h-3" style={{ color: jogador.cor }} />
-                      <span className="text-[10px] text-gray-400">Gols</span>
+                    {/* Posição */}
+                    <div 
+                      className="w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center text-[11px] md:text-xs font-bold flex-shrink-0"
+                      style={{ 
+                        backgroundColor: `${jogador.cor}15`,
+                        color: jogador.cor 
+                      }}
+                    >
+                      {index + 1}º
                     </div>
-                    <p className="text-sm md:text-base font-bold" style={{ color: jogador.cor }}>
-                      {jogador.gols}
-                    </p>
-                  </div>
-                  <div className="p-2 rounded-lg bg-white/[0.03]">
-                    <div className="flex items-center gap-1 mb-0.5">
-                      <TrendingUp className="w-3 h-3" style={{ color: jogador.cor }} />
-                      <span className="text-[10px] text-gray-400">Vendas</span>
-                    </div>
-                    <p className="text-sm md:text-base font-bold" style={{ color: jogador.cor }}>
-                      R$ {(jogador.vendas / 1000).toFixed(0)}k
-                    </p>
-                  </div>
-                </div>
 
-                {/* Detalhes por Rodada */}
-                <div className="text-[10px] md:text-xs text-gray-400 grid grid-cols-2 gap-1">
-                  <span>R1: {jogador.golsR1}g • R$ {(jogador.vendaR1 / 1000).toFixed(0)}k</span>
-                  <span>R2: {jogador.golsR2}g • R$ {(jogador.vendaR2 / 1000).toFixed(0)}k</span>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+                    {/* Nome e RCA */}
+                    <div className="min-w-0 flex-1">
+                      <p className="text-xs md:text-sm font-bold text-white truncate">
+                        {jogador.nome}
+                      </p>
+                      <p className="text-[10px] md:text-[11px] text-gray-400">
+                        RCA {jogador.rca}
+                      </p>
+                    </div>
+
+                    {/* Faturamento */}
+                    <div className="text-right flex-shrink-0">
+                      <p className="text-xs md:text-sm font-bold text-copa-green">
+                        R$ {(jogador.vendas / 1000).toFixed(1)}k
+                      </p>
+                      <p className="text-[9px] md:text-[10px] text-gray-500">faturamento</p>
+                    </div>
+
+                    {/* Gols */}
+                    <div className="text-right flex-shrink-0 w-10 md:w-12">
+                      <p className="text-sm md:text-base font-bold" style={{ color: jogador.cor }}>
+                        {jogador.gols}
+                      </p>
+                      <p className="text-[9px] md:text-[10px] text-gray-500">gols</p>
+                    </div>
+
+                    {/* Expand Icon */}
+                    <div className="flex-shrink-0 ml-1">
+                      {isExpanded ? (
+                        <ChevronUp className="w-4 h-4 text-gray-400" />
+                      ) : (
+                        <ChevronDown className="w-4 h-4 text-gray-400" />
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Expanded Metrics */}
+                  <AnimatePresence>
+                    {isExpanded && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-3 pb-3 md:px-4 md:pb-4 pt-0 border-t border-white/[0.03]">
+                          <p className="text-[10px] md:text-xs text-gray-400 mb-2 mt-2 font-medium">DETALHAMENTO DOS GOLS POR RODADA</p>
+                          
+                          <div className="grid grid-cols-2 gap-2">
+                            {/* Rodada 1 */}
+                            <div className="p-2 rounded-lg bg-white/[0.02]">
+                              <p className="text-[9px] md:text-[10px] text-gray-500 mb-1.5 font-medium">Rodada 1</p>
+                              <div className="space-y-1">
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[9px] md:text-[10px] text-gray-400 flex items-center gap-1">
+                                    <span>⚽</span> Gols por Vendas
+                                  </span>
+                                  <span className="text-[9px] md:text-[10px] font-bold text-green-400">{jogador.metricasR1?.golsPorVendas || 0}</span>
+                                </div>
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[9px] md:text-[10px] text-gray-400 flex items-center gap-1">
+                                    <span>👟</span> Assistências
+                                  </span>
+                                  <span className="text-[9px] md:text-[10px] font-bold text-blue-400">{jogador.metricasR1?.assistencias || 0}</span>
+                                </div>
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[9px] md:text-[10px] text-gray-400 flex items-center gap-1">
+                                    <span>⭐</span> Virada de Jogo
+                                  </span>
+                                  <span className="text-[9px] md:text-[10px] font-bold text-purple-400">{jogador.metricasR1?.viradasDeJogo || 0}</span>
+                                </div>
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[9px] md:text-[10px] text-gray-400 flex items-center gap-1">
+                                    <span>⚡</span> Jogada Ensaíada
+                                  </span>
+                                  <span className="text-[9px] md:text-[10px] font-bold text-yellow-400">{jogador.metricasR1?.jogadasEnsaiadas || 0}</span>
+                                </div>
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[9px] md:text-[10px] text-gray-400 flex items-center gap-1">
+                                    <span>🏆</span> Craque da Partida
+                                  </span>
+                                  <span className="text-[9px] md:text-[10px] font-bold text-green-400">{jogador.metricasR1?.craqueDaPartida || 0}</span>
+                                </div>
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[9px] md:text-[10px] text-gray-400 flex items-center gap-1">
+                                    <span>🟨</span> Cartão Amarelo
+                                  </span>
+                                  <span className="text-[9px] md:text-[10px] font-bold text-orange-400">{jogador.metricasR1?.cartaoAmarelo || 0}</span>
+                                </div>
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[9px] md:text-[10px] text-gray-400 flex items-center gap-1">
+                                    <span>🟥</span> Cartão Vermelho
+                                  </span>
+                                  <span className="text-[9px] md:text-[10px] font-bold text-red-400">{jogador.metricasR1?.cartaoVermelho || 0}</span>
+                                </div>
+                              </div>
+                              <div className="mt-2 pt-2 border-t border-white/[0.06] flex items-center justify-between">
+                                <span className="text-[10px] md:text-xs font-bold text-white">Total Gols</span>
+                                <span className="text-xs md:text-sm font-bold" style={{ color: jogador.cor }}>{jogador.golsR1}</span>
+                              </div>
+                            </div>
+
+                            {/* Rodada 2 */}
+                            <div className="p-2 rounded-lg bg-white/[0.02]">
+                              <p className="text-[9px] md:text-[10px] text-gray-500 mb-1.5 font-medium">Rodada 2</p>
+                              <div className="space-y-1">
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[9px] md:text-[10px] text-gray-400 flex items-center gap-1">
+                                    <span>⚽</span> Gols por Vendas
+                                  </span>
+                                  <span className="text-[9px] md:text-[10px] font-bold text-green-400">{jogador.metricasR2?.golsPorVendas || 0}</span>
+                                </div>
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[9px] md:text-[10px] text-gray-400 flex items-center gap-1">
+                                    <span>👟</span> Assistências
+                                  </span>
+                                  <span className="text-[9px] md:text-[10px] font-bold text-blue-400">{jogador.metricasR2?.assistencias || 0}</span>
+                                </div>
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[9px] md:text-[10px] text-gray-400 flex items-center gap-1">
+                                    <span>⭐</span> Virada de Jogo
+                                  </span>
+                                  <span className="text-[9px] md:text-[10px] font-bold text-purple-400">{jogador.metricasR2?.viradasDeJogo || 0}</span>
+                                </div>
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[9px] md:text-[10px] text-gray-400 flex items-center gap-1">
+                                    <span>⚡</span> Jogada Ensaíada
+                                  </span>
+                                  <span className="text-[9px] md:text-[10px] font-bold text-yellow-400">{jogador.metricasR2?.jogadasEnsaiadas || 0}</span>
+                                </div>
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[9px] md:text-[10px] text-gray-400 flex items-center gap-1">
+                                    <span>🏆</span> Craque da Partida
+                                  </span>
+                                  <span className="text-[9px] md:text-[10px] font-bold text-green-400">{jogador.metricasR2?.craqueDaPartida || 0}</span>
+                                </div>
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[9px] md:text-[10px] text-gray-400 flex items-center gap-1">
+                                    <span>🟨</span> Cartão Amarelo
+                                  </span>
+                                  <span className="text-[9px] md:text-[10px] font-bold text-orange-400">{jogador.metricasR2?.cartaoAmarelo || 0}</span>
+                                </div>
+                                <div className="flex items-center justify-between">
+                                  <span className="text-[9px] md:text-[10px] text-gray-400 flex items-center gap-1">
+                                    <span>🟥</span> Cartão Vermelho
+                                  </span>
+                                  <span className="text-[9px] md:text-[10px] font-bold text-red-400">{jogador.metricasR2?.cartaoVermelho || 0}</span>
+                                </div>
+                              </div>
+                              <div className="mt-2 pt-2 border-t border-white/[0.06] flex items-center justify-between">
+                                <span className="text-[10px] md:text-xs font-bold text-white">Total Gols</span>
+                                <span className="text-xs md:text-sm font-bold" style={{ color: jogador.cor }}>{jogador.golsR2}</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              );
+            })}
+          </div>
+        </motion.div>
 
         {filteredJogadores.length === 0 && (
           <div className="text-center py-12 text-gray-400">

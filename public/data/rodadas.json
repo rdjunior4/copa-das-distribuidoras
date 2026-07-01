@@ -67,15 +67,15 @@
           "cor": "#68C200",
           "tecnico": "Wanderley",
           "totalVendido": 505358.07,
-          "totalGols": 50,
+          "totalGols": 72,
           "jogadores": [
-            { "rca": 10, "nome": "HEVERTON CASSIO DE MORAIS", "vendaFaturada": 120517.99, "gols": 12 },
-            { "rca": 208, "nome": "OSCAR FERREIRA DE SOUSA NETO", "vendaFaturada": 116024.24, "gols": 11 },
-            { "rca": 265, "nome": "MARCONDES MOURA DO NASCIMENTO", "vendaFaturada": 106105.98, "gols": 10 },
-            { "rca": 145, "nome": "JORIVANDRO FONSECA DE ARAUJO", "vendaFaturada": 50546.80, "gols": 5 },
-            { "rca": 166, "nome": "FRANCIELLE DIAS DE FRANCA", "vendaFaturada": 39782.23, "gols": 3 },
-            { "rca": 34, "nome": "JOSIVAL FONSECA DE ARAUJO", "vendaFaturada": 36633.85, "gols": 3 },
-            { "rca": 188, "nome": "CAMILA FERRAZ DE LIMA", "vendaFaturada": 35746.98, "gols": 3 }
+            { "rca": 10, "nome": "HEVERTON CASSIO DE MORAIS", "vendaFaturada": 120517.99, "gols": 18, "metricas": { "golsPorVendas": 12, "assistencias": 2, "viradasDeJogo": 0, "jogadasEnsaiadas": 1, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 208, "nome": "OSCAR FERREIRA DE SOUSA NETO", "vendaFaturada": 116024.24, "gols": 15, "metricas": { "golsPorVendas": 11, "assistencias": 1, "viradasDeJogo": 1, "jogadasEnsaiadas": 0, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 265, "nome": "MARCONDES MOURA DO NASCIMENTO", "vendaFaturada": 106105.98, "gols": 14, "metricas": { "golsPorVendas": 10, "assistencias": 1, "viradasDeJogo": 0, "jogadasEnsaiadas": 1, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 145, "nome": "JORIVANDRO FONSECA DE ARAUJO", "vendaFaturada": 50546.80, "gols": 9, "metricas": { "golsPorVendas": 5, "assistencias": 1, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 166, "nome": "FRANCIELLE DIAS DE FRANCA", "vendaFaturada": 39782.23, "gols": 7, "metricas": { "golsPorVendas": 3, "assistencias": 0, "viradasDeJogo": 1, "jogadasEnsaiadas": 0, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 34, "nome": "JOSIVAL FONSECA DE ARAUJO", "vendaFaturada": 36633.85, "gols": 5, "metricas": { "golsPorVendas": 3, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 188, "nome": "CAMILA FERRAZ DE LIMA", "vendaFaturada": 35746.98, "gols": 4, "metricas": { "golsPorVendas": 3, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } }
           ]
         },
         {
@@ -83,14 +83,14 @@
           "cor": "#3b82f6",
           "tecnico": "Wanderley",
           "totalVendido": 203548.59,
-          "totalGols": 20,
+          "totalGols": 30,
           "jogadores": [
-            { "rca": 268, "nome": "IZAIAS MACHADO GOMES LINS", "vendaFaturada": 54912.75, "gols": 5 },
-            { "rca": 269, "nome": "ALEFF DEVLIN PONTES PEREIRA", "vendaFaturada": 45907.94, "gols": 4 },
-            { "rca": 64, "nome": "RUAN MARTINIANO SILVA DE OLIVEIRA", "vendaFaturada": 29182.87, "gols": 2 },
-            { "rca": 298, "nome": "PERICLES MARTINS JANUARIO", "vendaFaturada": 25930.27, "gols": 2 },
-            { "rca": 309, "nome": "ARIOCLECIO DE OLIVEIRA ALVES", "vendaFaturada": 35216.82, "gols": 3 },
-            { "rca": 284, "nome": "DARLINGTON DE SOUZA LUCENA", "vendaFaturada": 12397.94, "gols": 1 }
+            { "rca": 268, "nome": "IZAIAS MACHADO GOMES LINS", "vendaFaturada": 54912.75, "gols": 9, "metricas": { "golsPorVendas": 5, "assistencias": 1, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 269, "nome": "ALEFF DEVLIN PONTES PEREIRA", "vendaFaturada": 45907.94, "gols": 8, "metricas": { "golsPorVendas": 4, "assistencias": 0, "viradasDeJogo": 1, "jogadasEnsaiadas": 0, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 64, "nome": "RUAN MARTINIANO SILVA DE OLIVEIRA", "vendaFaturada": 29182.87, "gols": 4, "metricas": { "golsPorVendas": 2, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 298, "nome": "PERICLES MARTINS JANUARIO", "vendaFaturada": 25930.27, "gols": 3, "metricas": { "golsPorVendas": 2, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 309, "nome": "ARIOCLECIO DE OLIVEIRA ALVES", "vendaFaturada": 35216.82, "gols": 4, "metricas": { "golsPorVendas": 3, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 1, "cartaoVermelho": 0 } },
+            { "rca": 284, "nome": "DARLINGTON DE SOUZA LUCENA", "vendaFaturada": 12397.94, "gols": 2, "metricas": { "golsPorVendas": 1, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } }
           ]
         },
         {
@@ -98,17 +98,17 @@
           "cor": "#8b5cf6",
           "tecnico": "Carlos Eduardo",
           "totalVendido": 106014.81,
-          "totalGols": 10,
+          "totalGols": 16,
           "jogadores": [
-            { "rca": 294, "nome": "GEICIEL FERREIRA DA SILVA", "vendaFaturada": 38785.69, "gols": 3 },
-            { "rca": 287, "nome": "CARLOS ALBERTO SANTOS", "vendaFaturada": 22986.74, "gols": 2 },
-            { "rca": 312, "nome": "DIOGO DA SILVA PEREIRA", "vendaFaturada": 13797.95, "gols": 1 },
-            { "rca": 255, "nome": "KAUÊ EMERY DE OLIVEIRA", "vendaFaturada": 10108.47, "gols": 1 },
-            { "rca": 261, "nome": "DAVID CLEITON DE OLIVEIRA ALVES", "vendaFaturada": 8888.59, "gols": 0 },
-            { "rca": 311, "nome": "JEAN PAULO GOMES DA SILVA", "vendaFaturada": 7361.90, "gols": 0 },
-            { "rca": 295, "nome": "JOAO PAULO DA SILVA SILVEIRA", "vendaFaturada": 1782.90, "gols": 0 },
-            { "rca": 320, "nome": "MILTON HENRIQUE GOUVEIA COSTA PONTES", "vendaFaturada": 1353.78, "gols": 0 },
-            { "rca": 306, "nome": "CARLOS EDUARDO RIBEIRO DA SILVA", "vendaFaturada": 948.79, "gols": 0 }
+            { "rca": 294, "nome": "GEICIEL FERREIRA DA SILVA", "vendaFaturada": 38785.69, "gols": 7, "metricas": { "golsPorVendas": 3, "assistencias": 1, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 287, "nome": "CARLOS ALBERTO SANTOS", "vendaFaturada": 22986.74, "gols": 4, "metricas": { "golsPorVendas": 2, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 312, "nome": "DIOGO DA SILVA PEREIRA", "vendaFaturada": 13797.95, "gols": 2, "metricas": { "golsPorVendas": 1, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 255, "nome": "KAUÊ EMERY DE OLIVEIRA", "vendaFaturada": 10108.47, "gols": 2, "metricas": { "golsPorVendas": 1, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 261, "nome": "DAVID CLEITON DE OLIVEIRA ALVES", "vendaFaturada": 8888.59, "gols": 1, "metricas": { "golsPorVendas": 0, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 311, "nome": "JEAN PAULO GOMES DA SILVA", "vendaFaturada": 7361.90, "gols": 0, "metricas": { "golsPorVendas": 0, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 295, "nome": "JOAO PAULO DA SILVA SILVEIRA", "vendaFaturada": 1782.90, "gols": 0, "metricas": { "golsPorVendas": 0, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 1, "cartaoVermelho": 0 } },
+            { "rca": 320, "nome": "MILTON HENRIQUE GOUVEIA COSTA PONTES", "vendaFaturada": 1353.78, "gols": 0, "metricas": { "golsPorVendas": 0, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 306, "nome": "CARLOS EDUARDO RIBEIRO DA SILVA", "vendaFaturada": 948.79, "gols": 0, "metricas": { "golsPorVendas": 0, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } }
           ]
         },
         {
@@ -116,12 +116,12 @@
           "cor": "#FFD700",
           "tecnico": "Fernando",
           "totalVendido": 135886.30,
-          "totalGols": 13,
+          "totalGols": 21,
           "jogadores": [
-            { "rca": 125, "nome": "JOSE CLAUDIO COELHO DOS SANTOS", "vendaFaturada": 72215.56, "gols": 7 },
-            { "rca": 313, "nome": "IRANILSON DA SILVA", "vendaFaturada": 43605.88, "gols": 4 },
-            { "rca": 321, "nome": "ROBSON SOARES BEZERRA", "vendaFaturada": 19175.80, "gols": 1 },
-            { "rca": 308, "nome": "MARIA LUIZA DE LIMA TEIXEIRA", "vendaFaturada": 889.06, "gols": 0 }
+            { "rca": 125, "nome": "JOSE CLAUDIO COELHO DOS SANTOS", "vendaFaturada": 72215.56, "gols": 11, "metricas": { "golsPorVendas": 7, "assistencias": 1, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 1 } },
+            { "rca": 313, "nome": "IRANILSON DA SILVA", "vendaFaturada": 43605.88, "gols": 6, "metricas": { "golsPorVendas": 4, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 321, "nome": "ROBSON SOARES BEZERRA", "vendaFaturada": 19175.80, "gols": 3, "metricas": { "golsPorVendas": 1, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 308, "nome": "MARIA LUIZA DE LIMA TEIXEIRA", "vendaFaturada": 889.06, "gols": 1, "metricas": { "golsPorVendas": 0, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } }
           ]
         },
         {
@@ -129,21 +129,21 @@
           "cor": "#f97316",
           "tecnico": "Fernando",
           "totalVendido": 463686.56,
-          "totalGols": 46,
+          "totalGols": 68,
           "jogadores": [
-            { "rca": 239, "nome": "TIAGO FÉLIX DA SILVA", "vendaFaturada": 171549.09, "gols": 17 },
-            { "rca": 81, "nome": "PEDRO ROCHA MONTEIRO", "vendaFaturada": 87923.28, "gols": 8 },
-            { "rca": 91, "nome": "DIEGO BEZERRA DE MEDEIROS", "vendaFaturada": 57922.14, "gols": 5 },
-            { "rca": 90, "nome": "GERALDO SILVANO DE LIMA", "vendaFaturada": 50802.67, "gols": 5 },
-            { "rca": 84, "nome": "RAFAEL DANTAS BATISTA", "vendaFaturada": 38993.12, "gols": 3 },
-            { "rca": 77, "nome": "CLEVI FERNANDO DE MEDEIROS", "vendaFaturada": 38724.84, "gols": 3 },
-            { "rca": 317, "nome": "KLENIO FELIPE FIGUEIREDO DOS SANTOS", "vendaFaturada": 12288.36, "gols": 1 },
-            { "rca": 305, "nome": "LIDIANE PAMELA DA SILVA", "vendaFaturada": 5483.06, "gols": 0 }
+            { "rca": 239, "nome": "TIAGO FÉLIX DA SILVA", "vendaFaturada": 171549.09, "gols": 25, "metricas": { "golsPorVendas": 17, "assistencias": 2, "viradasDeJogo": 0, "jogadasEnsaiadas": 1, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 81, "nome": "PEDRO ROCHA MONTEIRO", "vendaFaturada": 87923.28, "gols": 12, "metricas": { "golsPorVendas": 8, "assistencias": 1, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 91, "nome": "DIEGO BEZERRA DE MEDEIROS", "vendaFaturada": 57922.14, "gols": 8, "metricas": { "golsPorVendas": 5, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 90, "nome": "GERALDO SILVANO DE LIMA", "vendaFaturada": 50802.67, "gols": 7, "metricas": { "golsPorVendas": 5, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 84, "nome": "RAFAEL DANTAS BATISTA", "vendaFaturada": 38993.12, "gols": 5, "metricas": { "golsPorVendas": 3, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 77, "nome": "CLEVI FERNANDO DE MEDEIROS", "vendaFaturada": 38724.84, "gols": 6, "metricas": { "golsPorVendas": 3, "assistencias": 0, "viradasDeJogo": 1, "jogadasEnsaiadas": 0, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 317, "nome": "KLENIO FELIPE FIGUEIREDO DOS SANTOS", "vendaFaturada": 12288.36, "gols": 3, "metricas": { "golsPorVendas": 1, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 305, "nome": "LIDIANE PAMELA DA SILVA", "vendaFaturada": 5483.06, "gols": 2, "metricas": { "golsPorVendas": 0, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } }
           ]
         }
       ],
       "totalRodada": 1414494.33,
-      "totalGols": 139
+      "totalGols": 207
     },
     {
       "numero": 2,
@@ -155,15 +155,15 @@
           "cor": "#68C200",
           "tecnico": "Wanderley",
           "totalVendido": 551051.49,
-          "totalGols": 55,
+          "totalGols": 85,
           "jogadores": [
-            { "rca": 10, "nome": "HEVERTON CASSIO DE MORAIS", "vendaFaturada": 134486.99, "gols": 13 },
-            { "rca": 208, "nome": "OSCAR FERREIRA DE SOUSA NETO", "vendaFaturada": 104179.30, "gols": 10 },
-            { "rca": 145, "nome": "JORIVANDRO FONSECA DE ARAUJO", "vendaFaturada": 74957.68, "gols": 7 },
-            { "rca": 166, "nome": "FRANCIELLE DIAS DE FRANCA", "vendaFaturada": 65992.17, "gols": 6 },
-            { "rca": 265, "nome": "MARCONDES MOURA DO NASCIMENTO", "vendaFaturada": 89519.38, "gols": 8 },
-            { "rca": 34, "nome": "JOSIVAL FONSECA DE ARAUJO", "vendaFaturada": 48889.81, "gols": 4 },
-            { "rca": 188, "nome": "CAMILA FERRAZ DE LIMA", "vendaFaturada": 33026.16, "gols": 3 }
+            { "rca": 10, "nome": "HEVERTON CASSIO DE MORAIS", "vendaFaturada": 134486.99, "gols": 22, "metricas": { "golsPorVendas": 13, "assistencias": 3, "viradasDeJogo": 0, "jogadasEnsaiadas": 1, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 208, "nome": "OSCAR FERREIRA DE SOUSA NETO", "vendaFaturada": 104179.30, "gols": 16, "metricas": { "golsPorVendas": 10, "assistencias": 2, "viradasDeJogo": 0, "jogadasEnsaiadas": 1, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 145, "nome": "JORIVANDRO FONSECA DE ARAUJO", "vendaFaturada": 74957.68, "gols": 13, "metricas": { "golsPorVendas": 7, "assistencias": 1, "viradasDeJogo": 1, "jogadasEnsaiadas": 0, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 166, "nome": "FRANCIELLE DIAS DE FRANCA", "vendaFaturada": 65992.17, "gols": 11, "metricas": { "golsPorVendas": 6, "assistencias": 1, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 265, "nome": "MARCONDES MOURA DO NASCIMENTO", "vendaFaturada": 89519.38, "gols": 13, "metricas": { "golsPorVendas": 8, "assistencias": 1, "viradasDeJogo": 0, "jogadasEnsaiadas": 1, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 34, "nome": "JOSIVAL FONSECA DE ARAUJO", "vendaFaturada": 48889.81, "gols": 6, "metricas": { "golsPorVendas": 4, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 188, "nome": "CAMILA FERRAZ DE LIMA", "vendaFaturada": 33026.16, "gols": 4, "metricas": { "golsPorVendas": 3, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } }
           ]
         },
         {
@@ -171,15 +171,15 @@
           "cor": "#3b82f6",
           "tecnico": "Wanderley",
           "totalVendido": 277217.97,
-          "totalGols": 27,
+          "totalGols": 42,
           "jogadores": [
-            { "rca": 268, "nome": "IZAIAS MACHADO GOMES LINS", "vendaFaturada": 95606.44, "gols": 9 },
-            { "rca": 269, "nome": "ALEFF DEVLIN PONTES PEREIRA", "vendaFaturada": 64603.89, "gols": 6 },
-            { "rca": 64, "nome": "RUAN MARTINIANO SILVA DE OLIVEIRA", "vendaFaturada": 39232.27, "gols": 3 },
-            { "rca": 298, "nome": "PERICLES MARTINS JANUARIO", "vendaFaturada": 20129.60, "gols": 2 },
-            { "rca": 309, "nome": "ARIOCLECIO DE OLIVEIRA ALVES", "vendaFaturada": 17557.69, "gols": 1 },
-            { "rca": 284, "nome": "DARLINGTON DE SOUZA LUCENA", "vendaFaturada": 36566.69, "gols": 3 },
-            { "rca": 318, "nome": "JOSE RICARDO CORDEIRO SILVA", "vendaFaturada": 3521.39, "gols": 0 }
+            { "rca": 268, "nome": "IZAIAS MACHADO GOMES LINS", "vendaFaturada": 95606.44, "gols": 15, "metricas": { "golsPorVendas": 9, "assistencias": 2, "viradasDeJogo": 0, "jogadasEnsaiadas": 1, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 269, "nome": "ALEFF DEVLIN PONTES PEREIRA", "vendaFaturada": 64603.89, "gols": 10, "metricas": { "golsPorVendas": 6, "assistencias": 1, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 64, "nome": "RUAN MARTINIANO SILVA DE OLIVEIRA", "vendaFaturada": 39232.27, "gols": 5, "metricas": { "golsPorVendas": 3, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 298, "nome": "PERICLES MARTINS JANUARIO", "vendaFaturada": 20129.60, "gols": 4, "metricas": { "golsPorVendas": 2, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 309, "nome": "ARIOCLECIO DE OLIVEIRA ALVES", "vendaFaturada": 17557.69, "gols": 3, "metricas": { "golsPorVendas": 1, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 284, "nome": "DARLINGTON DE SOUZA LUCENA", "vendaFaturada": 36566.69, "gols": 5, "metricas": { "golsPorVendas": 3, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 318, "nome": "JOSE RICARDO CORDEIRO SILVA", "vendaFaturada": 3521.39, "gols": 0, "metricas": { "golsPorVendas": 0, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } }
           ]
         },
         {
@@ -187,15 +187,15 @@
           "cor": "#8b5cf6",
           "tecnico": "Carlos Eduardo",
           "totalVendido": 119875.27,
-          "totalGols": 11,
+          "totalGols": 19,
           "jogadores": [
-            { "rca": 261, "nome": "DAVID CLEITON DE OLIVEIRA ALVES", "vendaFaturada": 29845.73, "gols": 2 },
-            { "rca": 320, "nome": "MILTON HENRIQUE GOUVEIA COSTA PONTES", "vendaFaturada": 25984.93, "gols": 2 },
-            { "rca": 312, "nome": "DIOGO DA SILVA PEREIRA", "vendaFaturada": 22544.97, "gols": 2 },
-            { "rca": 287, "nome": "CARLOS ALBERTO SANTOS", "vendaFaturada": 15640.57, "gols": 1 },
-            { "rca": 255, "nome": "KAUÊ EMERY DE OLIVEIRA", "vendaFaturada": 13188.16, "gols": 1 },
-            { "rca": 311, "nome": "JEAN PAULO GOMES DA SILVA", "vendaFaturada": 7342.35, "gols": 0 },
-            { "rca": 295, "nome": "JOAO PAULO DA SILVA SILVEIRA", "vendaFaturada": 5328.56, "gols": 0 }
+            { "rca": 261, "nome": "DAVID CLEITON DE OLIVEIRA ALVES", "vendaFaturada": 29845.73, "gols": 6, "metricas": { "golsPorVendas": 2, "assistencias": 1, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 320, "nome": "MILTON HENRIQUE GOUVEIA COSTA PONTES", "vendaFaturada": 25984.93, "gols": 5, "metricas": { "golsPorVendas": 2, "assistencias": 0, "viradasDeJogo": 1, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 312, "nome": "DIOGO DA SILVA PEREIRA", "vendaFaturada": 22544.97, "gols": 4, "metricas": { "golsPorVendas": 2, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 287, "nome": "CARLOS ALBERTO SANTOS", "vendaFaturada": 15640.57, "gols": 2, "metricas": { "golsPorVendas": 1, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 255, "nome": "KAUÊ EMERY DE OLIVEIRA", "vendaFaturada": 13188.16, "gols": 2, "metricas": { "golsPorVendas": 1, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 311, "nome": "JEAN PAULO GOMES DA SILVA", "vendaFaturada": 7342.35, "gols": 0, "metricas": { "golsPorVendas": 0, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 295, "nome": "JOAO PAULO DA SILVA SILVEIRA", "vendaFaturada": 5328.56, "gols": 0, "metricas": { "golsPorVendas": 0, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 1, "cartaoVermelho": 0 } }
           ]
         },
         {
@@ -203,12 +203,12 @@
           "cor": "#FFD700",
           "tecnico": "Fernando",
           "totalVendido": 173612.18,
-          "totalGols": 17,
+          "totalGols": 28,
           "jogadores": [
-            { "rca": 125, "nome": "JOSE CLAUDIO COELHO DOS SANTOS", "vendaFaturada": 92806.47, "gols": 9 },
-            { "rca": 313, "nome": "IRANILSON DA SILVA", "vendaFaturada": 37115.41, "gols": 3 },
-            { "rca": 321, "nome": "ROBSON SOARES BEZERRA", "vendaFaturada": 38045.43, "gols": 3 },
-            { "rca": 308, "nome": "MARIA LUIZA DE LIMA TEIXEIRA", "vendaFaturada": 5644.87, "gols": 0 }
+            { "rca": 125, "nome": "JOSE CLAUDIO COELHO DOS SANTOS", "vendaFaturada": 92806.47, "gols": 15, "metricas": { "golsPorVendas": 9, "assistencias": 2, "viradasDeJogo": 0, "jogadasEnsaiadas": 1, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 1 } },
+            { "rca": 313, "nome": "IRANILSON DA SILVA", "vendaFaturada": 37115.41, "gols": 5, "metricas": { "golsPorVendas": 3, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 321, "nome": "ROBSON SOARES BEZERRA", "vendaFaturada": 38045.43, "gols": 6, "metricas": { "golsPorVendas": 3, "assistencias": 0, "viradasDeJogo": 1, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 308, "nome": "MARIA LUIZA DE LIMA TEIXEIRA", "vendaFaturada": 5644.87, "gols": 2, "metricas": { "golsPorVendas": 0, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } }
           ]
         },
         {
@@ -216,31 +216,45 @@
           "cor": "#f97316",
           "tecnico": "Fernando",
           "totalVendido": 478836.72,
-          "totalGols": 47,
+          "totalGols": 78,
           "jogadores": [
-            { "rca": 81, "nome": "PEDRO ROCHA MONTEIRO", "vendaFaturada": 140452.61, "gols": 14 },
-            { "rca": 90, "nome": "GERALDO SILVANO DE LIMA", "vendaFaturada": 92382.94, "gols": 9 },
-            { "rca": 91, "nome": "DIEGO BEZERRA DE MEDEIROS", "vendaFaturada": 79959.12, "gols": 7 },
-            { "rca": 239, "nome": "TIAGO FÉLIX DA SILVA", "vendaFaturada": 63440.18, "gols": 6 },
-            { "rca": 84, "nome": "RAFAEL DANTAS BATISTA", "vendaFaturada": 36617.43, "gols": 3 },
-            { "rca": 77, "nome": "CLEVI FERNANDO DE MEDEIROS", "vendaFaturada": 40443.85, "gols": 4 },
-            { "rca": 317, "nome": "KLENIO FELIPE FIGUEIREDO DOS SANTOS", "vendaFaturada": 10384.04, "gols": 1 },
-            { "rca": 305, "nome": "LIDIANE PAMELA DA SILVA", "vendaFaturada": 15156.55, "gols": 1 }
+            { "rca": 81, "nome": "PEDRO ROCHA MONTEIRO", "vendaFaturada": 140452.61, "gols": 22, "metricas": { "golsPorVendas": 14, "assistencias": 2, "viradasDeJogo": 0, "jogadasEnsaiadas": 1, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 90, "nome": "GERALDO SILVANO DE LIMA", "vendaFaturada": 92382.94, "gols": 15, "metricas": { "golsPorVendas": 9, "assistencias": 1, "viradasDeJogo": 1, "jogadasEnsaiadas": 0, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 91, "nome": "DIEGO BEZERRA DE MEDEIROS", "vendaFaturada": 79959.12, "gols": 12, "metricas": { "golsPorVendas": 7, "assistencias": 1, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 239, "nome": "TIAGO FÉLIX DA SILVA", "vendaFaturada": 63440.18, "gols": 10, "metricas": { "golsPorVendas": 6, "assistencias": 1, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 1, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 84, "nome": "RAFAEL DANTAS BATISTA", "vendaFaturada": 36617.43, "gols": 5, "metricas": { "golsPorVendas": 3, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 77, "nome": "CLEVI FERNANDO DE MEDEIROS", "vendaFaturada": 40443.85, "gols": 8, "metricas": { "golsPorVendas": 4, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 1, "cartaoAmarelo": 1, "cartaoVermelho": 1 } },
+            { "rca": 317, "nome": "KLENIO FELIPE FIGUEIREDO DOS SANTOS", "vendaFaturada": 10384.04, "gols": 3, "metricas": { "golsPorVendas": 1, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } },
+            { "rca": 305, "nome": "LIDIANE PAMELA DA SILVA", "vendaFaturada": 15156.55, "gols": 3, "metricas": { "golsPorVendas": 1, "assistencias": 0, "viradasDeJogo": 0, "jogadasEnsaiadas": 0, "craqueDaPartida": 0, "cartaoAmarelo": 0, "cartaoVermelho": 0 } }
           ]
         }
       ],
       "totalRodada": 1600593.63,
-      "totalGols": 157
+      "totalGols": 252
     }
   ],
   "clientesNovos": {
     "rodada1": {
       "periodo": "08/06 a 14/06",
-      "total": 13
+      "total": 13,
+      "porSelecao": {
+        "Sertão PB": 5,
+        "Metropolitana PB": 3,
+        "Litoral Norte": 1,
+        "Costa Potiguar": 2,
+        "Sertão de Ouro": 2
+      }
     },
     "rodada2": {
       "periodo": "15/06 a 21/06",
-      "total": 29
+      "total": 29,
+      "porSelecao": {
+        "Sertão PB": 8,
+        "Metropolitana PB": 6,
+        "Litoral Norte": 4,
+        "Costa Potiguar": 5,
+        "Sertão de Ouro": 6
+      }
     }
   },
   "inadimplencia": {
