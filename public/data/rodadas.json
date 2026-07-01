@@ -1,0 +1,449 @@
+{
+  "selecoes": [
+    {
+      "id": 1,
+      "nome": "Sertão PB",
+      "cor": "#68C200",
+      "tecnico": "Wanderley",
+      "tecnicoCompleto": "WANDELEY MORAIS DE MEDEIROS"
+    },
+    {
+      "id": 2,
+      "nome": "Metropolitana PB",
+      "cor": "#3b82f6",
+      "tecnico": "Wanderley",
+      "tecnicoCompleto": "WANDELEY MORAIS DE MEDEIROS"
+    },
+    {
+      "id": 3,
+      "nome": "Litoral Norte",
+      "cor": "#8b5cf6",
+      "tecnico": "Carlos Eduardo",
+      "tecnicoCompleto": "CARLOS EDUARDO RIBEIRO DA SILVA"
+    },
+    {
+      "id": 4,
+      "nome": "Costa Potiguar",
+      "cor": "#FFD700",
+      "tecnico": "Fernando",
+      "tecnicoCompleto": "CLEVI FERNANDO DE MEDEIROS"
+    },
+    {
+      "id": 5,
+      "nome": "Sertão de Ouro",
+      "cor": "#f97316",
+      "tecnico": "Fernando",
+      "tecnicoCompleto": "CLEVI FERNANDO DE MEDEIROS"
+    }
+  ],
+  "tecnicos": [
+    {
+      "nome": "Wanderley",
+      "completo": "WANDELEY MORAIS DE MEDEIROS",
+      "selecoes": ["Sertão PB", "Metropolitana PB"],
+      "cor": "#68C200"
+    },
+    {
+      "nome": "Carlos Eduardo",
+      "completo": "CARLOS EDUARDO RIBEIRO DA SILVA",
+      "selecoes": ["Litoral Norte"],
+      "cor": "#8b5cf6"
+    },
+    {
+      "nome": "Fernando",
+      "completo": "CLEVI FERNANDO DE MEDEIROS",
+      "selecoes": ["Costa Potiguar", "Sertão de Ouro"],
+      "cor": "#FFD700"
+    }
+  ],
+  "rodadas": [
+    {
+      "numero": 1,
+      "dataInicio": "08/06/2026",
+      "dataFim": "14/06/2026",
+      "selecoes": [
+        {
+          "nome": "Sertão PB",
+          "cor": "#68C200",
+          "tecnico": "Wanderley",
+          "totalVendido": 505358.07,
+          "totalGols": 50,
+          "jogadores": [
+            { "rca": 10, "nome": "HEVERTON CASSIO DE MORAIS", "vendaFaturada": 120517.99, "gols": 12 },
+            { "rca": 208, "nome": "OSCAR FERREIRA DE SOUSA NETO", "vendaFaturada": 116024.24, "gols": 11 },
+            { "rca": 265, "nome": "MARCONDES MOURA DO NASCIMENTO", "vendaFaturada": 106105.98, "gols": 10 },
+            { "rca": 145, "nome": "JORIVANDRO FONSECA DE ARAUJO", "vendaFaturada": 50546.80, "gols": 5 },
+            { "rca": 166, "nome": "FRANCIELLE DIAS DE FRANCA", "vendaFaturada": 39782.23, "gols": 3 },
+            { "rca": 34, "nome": "JOSIVAL FONSECA DE ARAUJO", "vendaFaturada": 36633.85, "gols": 3 },
+            { "rca": 188, "nome": "CAMILA FERRAZ DE LIMA", "vendaFaturada": 35746.98, "gols": 3 }
+          ]
+        },
+        {
+          "nome": "Metropolitana PB",
+          "cor": "#3b82f6",
+          "tecnico": "Wanderley",
+          "totalVendido": 203548.59,
+          "totalGols": 20,
+          "jogadores": [
+            { "rca": 268, "nome": "IZAIAS MACHADO GOMES LINS", "vendaFaturada": 54912.75, "gols": 5 },
+            { "rca": 269, "nome": "ALEFF DEVLIN PONTES PEREIRA", "vendaFaturada": 45907.94, "gols": 4 },
+            { "rca": 64, "nome": "RUAN MARTINIANO SILVA DE OLIVEIRA", "vendaFaturada": 29182.87, "gols": 2 },
+            { "rca": 298, "nome": "PERICLES MARTINS JANUARIO", "vendaFaturada": 25930.27, "gols": 2 },
+            { "rca": 309, "nome": "ARIOCLECIO DE OLIVEIRA ALVES", "vendaFaturada": 35216.82, "gols": 3 },
+            { "rca": 284, "nome": "DARLINGTON DE SOUZA LUCENA", "vendaFaturada": 12397.94, "gols": 1 }
+          ]
+        },
+        {
+          "nome": "Litoral Norte",
+          "cor": "#8b5cf6",
+          "tecnico": "Carlos Eduardo",
+          "totalVendido": 106014.81,
+          "totalGols": 10,
+          "jogadores": [
+            { "rca": 294, "nome": "GEICIEL FERREIRA DA SILVA", "vendaFaturada": 38785.69, "gols": 3 },
+            { "rca": 287, "nome": "CARLOS ALBERTO SANTOS", "vendaFaturada": 22986.74, "gols": 2 },
+            { "rca": 312, "nome": "DIOGO DA SILVA PEREIRA", "vendaFaturada": 13797.95, "gols": 1 },
+            { "rca": 255, "nome": "KAUÊ EMERY DE OLIVEIRA", "vendaFaturada": 10108.47, "gols": 1 },
+            { "rca": 261, "nome": "DAVID CLEITON DE OLIVEIRA ALVES", "vendaFaturada": 8888.59, "gols": 0 },
+            { "rca": 311, "nome": "JEAN PAULO GOMES DA SILVA", "vendaFaturada": 7361.90, "gols": 0 },
+            { "rca": 295, "nome": "JOAO PAULO DA SILVA SILVEIRA", "vendaFaturada": 1782.90, "gols": 0 },
+            { "rca": 320, "nome": "MILTON HENRIQUE GOUVEIA COSTA PONTES", "vendaFaturada": 1353.78, "gols": 0 },
+            { "rca": 306, "nome": "CARLOS EDUARDO RIBEIRO DA SILVA", "vendaFaturada": 948.79, "gols": 0 }
+          ]
+        },
+        {
+          "nome": "Costa Potiguar",
+          "cor": "#FFD700",
+          "tecnico": "Fernando",
+          "totalVendido": 135886.30,
+          "totalGols": 13,
+          "jogadores": [
+            { "rca": 125, "nome": "JOSE CLAUDIO COELHO DOS SANTOS", "vendaFaturada": 72215.56, "gols": 7 },
+            { "rca": 313, "nome": "IRANILSON DA SILVA", "vendaFaturada": 43605.88, "gols": 4 },
+            { "rca": 321, "nome": "ROBSON SOARES BEZERRA", "vendaFaturada": 19175.80, "gols": 1 },
+            { "rca": 308, "nome": "MARIA LUIZA DE LIMA TEIXEIRA", "vendaFaturada": 889.06, "gols": 0 }
+          ]
+        },
+        {
+          "nome": "Sertão de Ouro",
+          "cor": "#f97316",
+          "tecnico": "Fernando",
+          "totalVendido": 463686.56,
+          "totalGols": 46,
+          "jogadores": [
+            { "rca": 239, "nome": "TIAGO FÉLIX DA SILVA", "vendaFaturada": 171549.09, "gols": 17 },
+            { "rca": 81, "nome": "PEDRO ROCHA MONTEIRO", "vendaFaturada": 87923.28, "gols": 8 },
+            { "rca": 91, "nome": "DIEGO BEZERRA DE MEDEIROS", "vendaFaturada": 57922.14, "gols": 5 },
+            { "rca": 90, "nome": "GERALDO SILVANO DE LIMA", "vendaFaturada": 50802.67, "gols": 5 },
+            { "rca": 84, "nome": "RAFAEL DANTAS BATISTA", "vendaFaturada": 38993.12, "gols": 3 },
+            { "rca": 77, "nome": "CLEVI FERNANDO DE MEDEIROS", "vendaFaturada": 38724.84, "gols": 3 },
+            { "rca": 317, "nome": "KLENIO FELIPE FIGUEIREDO DOS SANTOS", "vendaFaturada": 12288.36, "gols": 1 },
+            { "rca": 305, "nome": "LIDIANE PAMELA DA SILVA", "vendaFaturada": 5483.06, "gols": 0 }
+          ]
+        }
+      ],
+      "totalRodada": 1414494.33,
+      "totalGols": 139
+    },
+    {
+      "numero": 2,
+      "dataInicio": "15/06/2026",
+      "dataFim": "21/06/2026",
+      "selecoes": [
+        {
+          "nome": "Sertão PB",
+          "cor": "#68C200",
+          "tecnico": "Wanderley",
+          "totalVendido": 551051.49,
+          "totalGols": 55,
+          "jogadores": [
+            { "rca": 10, "nome": "HEVERTON CASSIO DE MORAIS", "vendaFaturada": 134486.99, "gols": 13 },
+            { "rca": 208, "nome": "OSCAR FERREIRA DE SOUSA NETO", "vendaFaturada": 104179.30, "gols": 10 },
+            { "rca": 145, "nome": "JORIVANDRO FONSECA DE ARAUJO", "vendaFaturada": 74957.68, "gols": 7 },
+            { "rca": 166, "nome": "FRANCIELLE DIAS DE FRANCA", "vendaFaturada": 65992.17, "gols": 6 },
+            { "rca": 265, "nome": "MARCONDES MOURA DO NASCIMENTO", "vendaFaturada": 89519.38, "gols": 8 },
+            { "rca": 34, "nome": "JOSIVAL FONSECA DE ARAUJO", "vendaFaturada": 48889.81, "gols": 4 },
+            { "rca": 188, "nome": "CAMILA FERRAZ DE LIMA", "vendaFaturada": 33026.16, "gols": 3 }
+          ]
+        },
+        {
+          "nome": "Metropolitana PB",
+          "cor": "#3b82f6",
+          "tecnico": "Wanderley",
+          "totalVendido": 277217.97,
+          "totalGols": 27,
+          "jogadores": [
+            { "rca": 268, "nome": "IZAIAS MACHADO GOMES LINS", "vendaFaturada": 95606.44, "gols": 9 },
+            { "rca": 269, "nome": "ALEFF DEVLIN PONTES PEREIRA", "vendaFaturada": 64603.89, "gols": 6 },
+            { "rca": 64, "nome": "RUAN MARTINIANO SILVA DE OLIVEIRA", "vendaFaturada": 39232.27, "gols": 3 },
+            { "rca": 298, "nome": "PERICLES MARTINS JANUARIO", "vendaFaturada": 20129.60, "gols": 2 },
+            { "rca": 309, "nome": "ARIOCLECIO DE OLIVEIRA ALVES", "vendaFaturada": 17557.69, "gols": 1 },
+            { "rca": 284, "nome": "DARLINGTON DE SOUZA LUCENA", "vendaFaturada": 36566.69, "gols": 3 },
+            { "rca": 318, "nome": "JOSE RICARDO CORDEIRO SILVA", "vendaFaturada": 3521.39, "gols": 0 }
+          ]
+        },
+        {
+          "nome": "Litoral Norte",
+          "cor": "#8b5cf6",
+          "tecnico": "Carlos Eduardo",
+          "totalVendido": 119875.27,
+          "totalGols": 11,
+          "jogadores": [
+            { "rca": 261, "nome": "DAVID CLEITON DE OLIVEIRA ALVES", "vendaFaturada": 29845.73, "gols": 2 },
+            { "rca": 320, "nome": "MILTON HENRIQUE GOUVEIA COSTA PONTES", "vendaFaturada": 25984.93, "gols": 2 },
+            { "rca": 312, "nome": "DIOGO DA SILVA PEREIRA", "vendaFaturada": 22544.97, "gols": 2 },
+            { "rca": 287, "nome": "CARLOS ALBERTO SANTOS", "vendaFaturada": 15640.57, "gols": 1 },
+            { "rca": 255, "nome": "KAUÊ EMERY DE OLIVEIRA", "vendaFaturada": 13188.16, "gols": 1 },
+            { "rca": 311, "nome": "JEAN PAULO GOMES DA SILVA", "vendaFaturada": 7342.35, "gols": 0 },
+            { "rca": 295, "nome": "JOAO PAULO DA SILVA SILVEIRA", "vendaFaturada": 5328.56, "gols": 0 }
+          ]
+        },
+        {
+          "nome": "Costa Potiguar",
+          "cor": "#FFD700",
+          "tecnico": "Fernando",
+          "totalVendido": 173612.18,
+          "totalGols": 17,
+          "jogadores": [
+            { "rca": 125, "nome": "JOSE CLAUDIO COELHO DOS SANTOS", "vendaFaturada": 92806.47, "gols": 9 },
+            { "rca": 313, "nome": "IRANILSON DA SILVA", "vendaFaturada": 37115.41, "gols": 3 },
+            { "rca": 321, "nome": "ROBSON SOARES BEZERRA", "vendaFaturada": 38045.43, "gols": 3 },
+            { "rca": 308, "nome": "MARIA LUIZA DE LIMA TEIXEIRA", "vendaFaturada": 5644.87, "gols": 0 }
+          ]
+        },
+        {
+          "nome": "Sertão de Ouro",
+          "cor": "#f97316",
+          "tecnico": "Fernando",
+          "totalVendido": 478836.72,
+          "totalGols": 47,
+          "jogadores": [
+            { "rca": 81, "nome": "PEDRO ROCHA MONTEIRO", "vendaFaturada": 140452.61, "gols": 14 },
+            { "rca": 90, "nome": "GERALDO SILVANO DE LIMA", "vendaFaturada": 92382.94, "gols": 9 },
+            { "rca": 91, "nome": "DIEGO BEZERRA DE MEDEIROS", "vendaFaturada": 79959.12, "gols": 7 },
+            { "rca": 239, "nome": "TIAGO FÉLIX DA SILVA", "vendaFaturada": 63440.18, "gols": 6 },
+            { "rca": 84, "nome": "RAFAEL DANTAS BATISTA", "vendaFaturada": 36617.43, "gols": 3 },
+            { "rca": 77, "nome": "CLEVI FERNANDO DE MEDEIROS", "vendaFaturada": 40443.85, "gols": 4 },
+            { "rca": 317, "nome": "KLENIO FELIPE FIGUEIREDO DOS SANTOS", "vendaFaturada": 10384.04, "gols": 1 },
+            { "rca": 305, "nome": "LIDIANE PAMELA DA SILVA", "vendaFaturada": 15156.55, "gols": 1 }
+          ]
+        }
+      ],
+      "totalRodada": 1600593.63,
+      "totalGols": 157
+    }
+  ],
+  "clientesNovos": {
+    "rodada1": {
+      "periodo": "08/06 a 14/06",
+      "total": 13
+    },
+    "rodada2": {
+      "periodo": "15/06 a 21/06",
+      "total": 29
+    }
+  },
+  "inadimplencia": {
+    "rodada1": {
+      "periodo": "08/06 a 14/06",
+      "pb": { "titulos": 3, "valorOriginal": 4081.83, "valorComJuros": 4374.65 },
+      "rn": { "titulos": 4, "valorOriginal": 2658.73, "valorComJuros": 2839.50 },
+      "clientes": [
+        {
+          "empresa": "PB Foods",
+          "cliente": "Anna Julia Cavalcanti Nascimento Morais",
+          "rca": 24,
+          "responsavel": "Carlos",
+          "titulos": 1,
+          "valorOriginal": 209.88,
+          "valorAtualizado": 225.27,
+          "vencimento": "09/06/2026",
+          "diasAtraso": 20
+        },
+        {
+          "empresa": "PB Foods",
+          "cliente": "Bem Comer Restaurante Ltda",
+          "rca": 295,
+          "responsavel": "João Paulo da Silva Silveira",
+          "titulos": 2,
+          "valorOriginal": 3249.93,
+          "valorAtualizado": 3483.40,
+          "vencimento": "09 e 10/06/2026",
+          "diasAtraso": 20
+        },
+        {
+          "empresa": "PB Foods",
+          "cliente": "Supermercado Regional Eireli",
+          "rca": 309,
+          "responsavel": "Arioclécio de Oliveira Alves",
+          "titulos": 1,
+          "valorOriginal": 622.02,
+          "valorAtualizado": 665.98,
+          "vencimento": "10/06/2026",
+          "diasAtraso": 19
+        },
+        {
+          "empresa": "RN Foods",
+          "cliente": "Multfrios Caicó Ltda",
+          "rca": 81,
+          "responsavel": "Pedro Rocha Monteiro",
+          "titulos": 1,
+          "valorOriginal": 1099.00,
+          "valorAtualizado": 1167.87,
+          "vencimento": "13/06/2026",
+          "diasAtraso": 16
+        },
+        {
+          "empresa": "RN Foods",
+          "cliente": "Big House Gourmet Ltda",
+          "rca": 125,
+          "responsavel": "José Claudio Coelho dos Santos",
+          "titulos": 1,
+          "valorOriginal": 1093.94,
+          "valorAtualizado": 1174.16,
+          "vencimento": "09/06/2026",
+          "diasAtraso": 20
+        },
+        {
+          "empresa": "RN Foods",
+          "cliente": "Souza Moura Comércio de Alimentos Ltda",
+          "rca": 302,
+          "responsavel": "Paulo Sergio de Brito Soares",
+          "titulos": 1,
+          "valorOriginal": 281.59,
+          "valorAtualizado": 300.74,
+          "vencimento": "11/06/2026",
+          "diasAtraso": 18
+        },
+        {
+          "empresa": "RN Foods",
+          "cliente": "AD Comércio de Alimentos Ltda",
+          "rca": 302,
+          "responsavel": "Paulo Sergio de Brito Soares",
+          "titulos": 1,
+          "valorOriginal": 184.20,
+          "valorAtualizado": 196.73,
+          "vencimento": "11/06/2026",
+          "diasAtraso": 18
+        }
+      ]
+    },
+    "rodada2": {
+      "periodo": "15/06 a 21/06",
+      "pb": { "titulos": 6, "valorOriginal": 5849.81, "valorComJuros": 6134.32 },
+      "rn": { "titulos": 6, "valorOriginal": 8370.43, "valorComJuros": 8835.84 },
+      "clientes": [
+        {
+          "empresa": "PB Foods",
+          "cliente": "Geovanna de Medeiros Silva",
+          "rca": 10,
+          "responsavel": "Heverton Cassio de Morais",
+          "titulos": 1,
+          "valorOriginal": 1156.78,
+          "valorAtualizado": 1210.76,
+          "vencimento": "19/06/2026",
+          "diasAtraso": 10
+        },
+        {
+          "empresa": "PB Foods",
+          "cliente": "Jayne da Silva Medeiros",
+          "rca": 10,
+          "responsavel": "Heverton Cassio de Morais",
+          "titulos": 1,
+          "valorOriginal": 266.67,
+          "valorAtualizado": 279.11,
+          "vencimento": "19/06/2026",
+          "diasAtraso": 10
+        },
+        {
+          "empresa": "PB Foods",
+          "cliente": "Eliene Ricarte da Silva Medeiros",
+          "rca": 10,
+          "responsavel": "Heverton Cassio de Morais",
+          "titulos": 1,
+          "valorOriginal": 880.08,
+          "valorAtualizado": 921.15,
+          "vencimento": "19/06/2026",
+          "diasAtraso": 10
+        },
+        {
+          "empresa": "PB Foods",
+          "cliente": "Supermercado São José Conceito Ltda",
+          "rca": 10,
+          "responsavel": "Heverton Cassio de Morais",
+          "titulos": 1,
+          "valorOriginal": 1048.36,
+          "valorAtualizado": 1097.28,
+          "vencimento": "19/06/2026",
+          "diasAtraso": 10
+        },
+        {
+          "empresa": "PB Foods",
+          "cliente": "Patrícia Gonçalves Braga",
+          "rca": 166,
+          "responsavel": "Francielle Dias de França",
+          "titulos": 1,
+          "valorOriginal": 676.16,
+          "valorAtualizado": 709.52,
+          "vencimento": "18/06/2026",
+          "diasAtraso": 11
+        },
+        {
+          "empresa": "PB Foods",
+          "cliente": "Bem Comer Restaurante Ltda",
+          "rca": 295,
+          "responsavel": "João Paulo da Silva Silveira",
+          "titulos": 1,
+          "valorOriginal": 1821.76,
+          "valorAtualizado": 1916.49,
+          "vencimento": "17/06/2026",
+          "diasAtraso": 12
+        },
+        {
+          "empresa": "RN Foods",
+          "cliente": "Nobre Sabor Refeições Ltda",
+          "rca": 77,
+          "responsavel": "Clevi Fernando de Medeiros",
+          "titulos": 2,
+          "valorOriginal": 4843.40,
+          "valorAtualizado": 5121.09,
+          "vencimento": "15/06/2026",
+          "diasAtraso": 14
+        },
+        {
+          "empresa": "RN Foods",
+          "cliente": "Alessia Maria Florencio de Medeiros Felix",
+          "rca": 84,
+          "responsavel": "Rafael Dantas Batista",
+          "titulos": 1,
+          "valorOriginal": 373.05,
+          "valorAtualizado": 391.45,
+          "vencimento": "18/06/2026",
+          "diasAtraso": 11
+        },
+        {
+          "empresa": "RN Foods",
+          "cliente": "Big House Gourmet Ltda",
+          "rca": 125,
+          "responsavel": "José Claudio Coelho dos Santos",
+          "titulos": 2,
+          "valorOriginal": 2573.48,
+          "valorAtualizado": 2714.16,
+          "vencimento": "16/06/2026",
+          "diasAtraso": 13
+        },
+        {
+          "empresa": "RN Foods",
+          "cliente": "Raul Victor de Medeiros Paiva",
+          "rca": 317,
+          "responsavel": "Klenio Felipe Figueiredo dos Santos",
+          "titulos": 1,
+          "valorOriginal": 580.50,
+          "valorAtualizado": 609.14,
+          "vencimento": "18/06/2026",
+          "diasAtraso": 11
+        }
+      ]
+    }
+  }
+}

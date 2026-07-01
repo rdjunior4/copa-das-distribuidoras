@@ -1,0 +1,240 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Selecao {
+  id            String       @id @default(cuid())
+  nome          String       @unique
+  cor           String
+  escudo        String?
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  rodadas       RodadaSelecao[]
+}
+
+model Tecnico {
+  id            String       @id @default(cuid())
+  nome          String
+  foto          String?
+  equipe        String?
+  vitorias      Int          @default(0)
+  empates       Int          @default(0)
+  derrotas      Int          @default(0)
+  golsPro       Int          @default(0)
+  golsContra    Int          @default(0)
+  saldo         Int          @default(0)
+  pontuacao     Int          @default(0)
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
+
+model Jogador {
+  id              String       @id @default(cuid())
+  nome            String
+  foto            String?
+  funcao          String?
+  equipe          String?
+  supervisor      String?
+  vendas          Float        @default(0)
+  clientesPositivados Int      @default(0)
+  clientesReativados  Int      @default(0)
+  mixEstrategico  Int          @default(0)
+  inadimplencia   Float        @default(0)
+  cartaoAmarelo   Int          @default(0)
+  cartaoVermelho  Int          @default(0)
+  gols            Int          @default(0)
+  evolucao        Float        @default(0)
+  pontuacao       Int          @default(0)
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  rodadas         RodadaJogador[]
+  conquistas      Conquista[]
+}
+
+model Rodada {
+  id              String       @id @default(cuid())
+  numero          Int          @unique
+  dataInicio      DateTime
+  dataFim         DateTime
+  processada      Boolean      @default(false)
+  snapshot        String?
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  selecoes        RodadaSelecao[]
+  jogadores       RodadaJogador[]
+  resultados      Resultado[]
+  logs            Log[]
+}
+
+model RodadaSelecao {
+  id              String       @id @default(cuid())
+  rodadaId        String
+  selecaoId       String
+  gols            Int          @default(0)
+  golsContra      Int          @default(0)
+  vitorias        Int          @default(0)
+  empates         Int          @default(0)
+  derrotas        Int          @default(0)
+  pontos          Int          @default(0)
+  posicao         Int?
+  cartaoAmarelo   Int          @default(0)
+  cartaoVermelho  Int          @default(0)
+  createdAt       DateTime     @default(now())
+
+  rodada          Rodada       @relation(fields: [rodadaId], references: [id])
+  selecao         Selecao      @relation(fields: [selecaoId], references: [id])
+
+  @@unique([rodadaId, selecaoId])
+}
+
+model RodadaJogador {
+  id              String       @id @default(cuid())
+  rodadaId        String
+  jogadorId       String
+  vendas          Float        @default(0)
+  clientesPositivados Int      @default(0)
+  clientesReativados  Int      @default(0)
+  mixEstrategico  Int          @default(0)
+  inadimplencia   Float        @default(0)
+  gols            Int          @default(0)
+  evolucao        Float        @default(0)
+  cartaoAmarelo   Int          @default(0)
+  cartaoVermelho  Int          @default(0)
+  craquePartida   Boolean      @default(false)
+  createdAt       DateTime     @default(now())
+
+  rodada          Rodada       @relation(fields: [rodadaId], references: [id])
+  jogador         Jogador      @relation(fields: [jogadorId], references: [id])
+
+  @@unique([rodadaId, jogadorId])
+}
+
+model Resultado {
+  id              String       @id @default(cuid())
+  rodadaId        String
+  selecaoCasa     String
+  selecaoFora     String
+  golsCasa        Int          @default(0)
+  golsFora        Int          @default(0)
+  createdAt       DateTime     @default(now())
+
+  rodada          Rodada       @relation(fields: [rodadaId], references: [id])
+
+  @@unique([rodadaId, selecaoCasa, selecaoFora])
+}
+
+model Cliente {
+  id              String       @id @default(cuid())
+  codigo          String       @unique
+  nome            String
+  fantasia        String?
+  cnpjCpf         String?
+  tipoPessoa      String?
+  atividade       String?
+  ramoAtividade   String?
+  praca           String?
+  endereco        String?
+  telefone        String?
+  email           String?
+  estado          String?
+  cidade          String?
+  bloqueado       Boolean      @default(false)
+  dataBloqueio    DateTime?
+  observacoes     String?
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+}
+
+model Venda {
+  id              String       @id @default(cuid())
+  rcaCodigo       Int
+  rcaNome         String
+  supervisorCodigo Int
+  supervisorNome  String
+  dataVenda       DateTime
+  valorVenda      Float
+  valorLiquido    Float
+  valorDevolucao  Float        @default(0)
+  valorCMV        Float        @default(0)
+  valorLucro      Float        @default(0)
+  valorMeta       Float        @default(0)
+  percentualMeta  Float        @default(0)
+  percentualLucro Float        @default(0)
+  pesoKg          Float        @default(0)
+  valorDesconto   Float        @default(0)
+  prazoMedio      Float        @default(0)
+  qtdeNFs         Int          @default(0)
+  qtClientesPosit Int          @default(0)
+  qtMixVendido    Int          @default(0)
+  createdAt       DateTime     @default(now())
+}
+
+model Inadimplencia {
+  id              String       @id @default(cuid())
+  clienteCodigo   String
+  clienteNome     String
+  cnpjCpf         String?
+  notaFiscal      String?
+  dataVencimento  DateTime
+  valorTitulo     Float
+  diasAtraso      Int          @default(0)
+  valorComJuros   Float        @default(0)
+  praca           String?
+  rcaCodigo       Int?
+  rcaNome         String?
+  estado          String
+  dataProcessamento DateTime
+  createdAt       DateTime     @default(now())
+}
+
+model Conquista {
+  id              String       @id @default(cuid())
+  jogadorId       String
+  tipo            String
+  titulo          String
+  descricao       String?
+  rodadaId        String?
+  valor           Float?
+  createdAt       DateTime     @default(now())
+
+  jogador         Jogador      @relation(fields: [jogadorId], references: [id])
+}
+
+model Log {
+  id              String       @id @default(cuid())
+  rodadaId        String?
+  tipo            String
+  mensagem        String
+  detalhes        String?
+  createdAt       DateTime     @default(now())
+
+  rodada          Rodada?      @relation(fields: [rodadaId], references: [id])
+}
+
+model Configuracao {
+  id              String       @id @default(cuid())
+  chave           String       @unique
+  valor           String
+  descricao       String?
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+}
+
+model RelatorioERP {
+  id              String       @id @default(cuid())
+  nomeArquivo     String
+  tipoArquivo     String
+  tipoRelatorio   String
+  dados           String
+  processado      Boolean      @default(false)
+  rodadaId        String?
+  createdAt       DateTime     @default(now())
+}

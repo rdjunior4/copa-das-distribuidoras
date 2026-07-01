@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 140" fill="none">
+  <!-- Shield shape -->
+  <path d="M60 5 L110 25 L110 75 Q110 120 60 135 Q10 120 10 75 L10 25 Z" fill="#1a1a1a" stroke="#FFD700" stroke-width="3"/>
+  <path d="M60 10 L105 28 L105 73 Q105 115 60 130 Q15 115 15 73 L15 28 Z" fill="#0a0a0a" stroke="#68C200" stroke-width="2"/>
+  
+  <!-- Stars -->
+  <polygon points="60,15 62,21 68,21 63,25 65,31 60,27 55,31 57,25 52,21 58,21" fill="#FFD700"/>
+  <polygon points="40,20 41.5,24 46,24 42.5,27 44,31 40,28 36,31 37.5,27 34,24 38.5,24" fill="#FFD700"/>
+  <polygon points="80,20 81.5,24 86,24 82.5,27 84,31 80,28 76,31 77.5,27 74,24 78.5,24" fill="#FFD700"/>
+  <polygon points="30,28 31.2,31 35,31 32,33.5 33,37 30,34.5 27,37 28,33.5 25,31 28.8,31" fill="#FFD700"/>
+  <polygon points="90,28 91.2,31 95,31 92,33.5 93,37 90,34.5 87,37 88,33.5 85,31 88.8,31" fill="#FFD700"/>
+  
+  <!-- Text -->
+  <text x="60" y="50" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="10" font-weight="900" fill="#FFD700" letter-spacing="1">COPA DAS</text>
+  <text x="60" y="72" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="16" font-weight="900" fill="white" letter-spacing="1">DISTRIBUIDORAS</text>
+  <text x="60" y="95" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="22" font-weight="900" fill="#FFD700">2026</text>
+  
+  <!-- Soccer ball -->
+  <circle cx="60" cy="115" r="12" fill="white" stroke="#333" stroke-width="1"/>
+  <path d="M60 103 L55 108 L48 108 L52 113 L50 120 L57 117 L60 123 L63 117 L70 120 L68 113 L72 108 L65 108 Z" fill="#333"/>
+</svg>
