@@ -265,7 +265,7 @@
       "clientes": [
         {
           "empresa": "PB Foods",
-          "cliente": "Anna Julia Cavalcanti Nascimento Morais",
+          "cliente": "Cliente *****",
           "rca": 24,
           "responsavel": "Carlos",
           "titulos": 1,
@@ -276,7 +276,7 @@
         },
         {
           "empresa": "PB Foods",
-          "cliente": "Bem Comer Restaurante Ltda",
+          "cliente": "Cliente *****",
           "rca": 295,
           "responsavel": "João Paulo da Silva Silveira",
           "titulos": 2,
@@ -287,7 +287,7 @@
         },
         {
           "empresa": "PB Foods",
-          "cliente": "Supermercado Regional Eireli",
+          "cliente": "Cliente *****",
           "rca": 309,
           "responsavel": "Arioclécio de Oliveira Alves",
           "titulos": 1,
@@ -298,7 +298,7 @@
         },
         {
           "empresa": "RN Foods",
-          "cliente": "Multfrios Caicó Ltda",
+          "cliente": "Cliente *****",
           "rca": 81,
           "responsavel": "Pedro Rocha Monteiro",
           "titulos": 1,
@@ -309,7 +309,7 @@
         },
         {
           "empresa": "RN Foods",
-          "cliente": "Big House Gourmet Ltda",
+          "cliente": "Cliente *****",
           "rca": 125,
           "responsavel": "José Claudio Coelho dos Santos",
           "titulos": 1,
@@ -320,7 +320,7 @@
         },
         {
           "empresa": "RN Foods",
-          "cliente": "Souza Moura Comércio de Alimentos Ltda",
+          "cliente": "Cliente *****",
           "rca": 302,
           "responsavel": "Paulo Sergio de Brito Soares",
           "titulos": 1,
@@ -331,7 +331,7 @@
         },
         {
           "empresa": "RN Foods",
-          "cliente": "AD Comércio de Alimentos Ltda",
+          "cliente": "Cliente *****",
           "rca": 302,
           "responsavel": "Paulo Sergio de Brito Soares",
           "titulos": 1,
@@ -349,7 +349,7 @@
       "clientes": [
         {
           "empresa": "PB Foods",
-          "cliente": "Geovanna de Medeiros Silva",
+          "cliente": "Cliente *****",
           "rca": 10,
           "responsavel": "Heverton Cassio de Morais",
           "titulos": 1,
@@ -360,7 +360,7 @@
         },
         {
           "empresa": "PB Foods",
-          "cliente": "Jayne da Silva Medeiros",
+          "cliente": "Cliente *****",
           "rca": 10,
           "responsavel": "Heverton Cassio de Morais",
           "titulos": 1,
@@ -371,7 +371,7 @@
         },
         {
           "empresa": "PB Foods",
-          "cliente": "Eliene Ricarte da Silva Medeiros",
+          "cliente": "Cliente *****",
           "rca": 10,
           "responsavel": "Heverton Cassio de Morais",
           "titulos": 1,
@@ -382,7 +382,7 @@
         },
         {
           "empresa": "PB Foods",
-          "cliente": "Supermercado São José Conceito Ltda",
+          "cliente": "Cliente *****",
           "rca": 10,
           "responsavel": "Heverton Cassio de Morais",
           "titulos": 1,
@@ -393,7 +393,7 @@
         },
         {
           "empresa": "PB Foods",
-          "cliente": "Patrícia Gonçalves Braga",
+          "cliente": "Cliente *****",
           "rca": 166,
           "responsavel": "Francielle Dias de França",
           "titulos": 1,
@@ -404,7 +404,7 @@
         },
         {
           "empresa": "PB Foods",
-          "cliente": "Bem Comer Restaurante Ltda",
+          "cliente": "Cliente *****",
           "rca": 295,
           "responsavel": "João Paulo da Silva Silveira",
           "titulos": 1,
@@ -415,7 +415,7 @@
         },
         {
           "empresa": "RN Foods",
-          "cliente": "Nobre Sabor Refeições Ltda",
+          "cliente": "Cliente *****",
           "rca": 77,
           "responsavel": "Clevi Fernando de Medeiros",
           "titulos": 2,
@@ -426,7 +426,7 @@
         },
         {
           "empresa": "RN Foods",
-          "cliente": "Alessia Maria Florencio de Medeiros Felix",
+          "cliente": "Cliente *****",
           "rca": 84,
           "responsavel": "Rafael Dantas Batista",
           "titulos": 1,
@@ -437,7 +437,7 @@
         },
         {
           "empresa": "RN Foods",
-          "cliente": "Big House Gourmet Ltda",
+          "cliente": "Cliente *****",
           "rca": 125,
           "responsavel": "José Claudio Coelho dos Santos",
           "titulos": 2,
@@ -448,7 +448,7 @@
         },
         {
           "empresa": "RN Foods",
-          "cliente": "Raul Victor de Medeiros Paiva",
+          "cliente": "Cliente *****",
           "rca": 317,
           "responsavel": "Klenio Felipe Figueiredo dos Santos",
           "titulos": 1,
