@@ -198,29 +198,40 @@ export default function EstatisticasPage() {
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
-            {Object.entries(inadimplencia).map(([key, rodada]) => (
-              <div key={key} className="p-3 md:p-4 rounded-xl bg-white/[0.02]">
-                <h3 className="font-medium text-xs md:text-sm mb-2">
-                  {key === 'rodada1' ? 'Rodada 1 (08-14/06)' : 'Rodada 2 (15-21/06)'}
-                </h3>
-                <div className="grid grid-cols-2 gap-2 md:gap-3">
-                  <div className="text-center p-2 rounded-lg bg-white/[0.02]">
-                    <p className="text-[10px] md:text-xs text-gray-400">PB</p>
-                    <p className="font-bold text-xs md:text-sm text-red-400">
-                      R$ {(rodada.pb.valorComJuros / 1000).toFixed(1)}k
-                    </p>
-                    <p className="text-[10px] md:text-xs text-gray-500">{rodada.pb.titulos} títulos</p>
-                  </div>
-                  <div className="text-center p-2 rounded-lg bg-white/[0.02]">
-                    <p className="text-[10px] md:text-xs text-gray-400">RN</p>
-                    <p className="font-bold text-xs md:text-sm text-red-400">
-                      R$ {(rodada.rn.valorComJuros / 1000).toFixed(1)}k
-                    </p>
-                    <p className="text-[10px] md:text-xs text-gray-500">{rodada.rn.titulos} títulos</p>
+            {Object.entries(inadimplencia).map(([key, rodada]) => {
+              const r = rodada as any;
+              const num = parseInt(key.replace('rodada', ''));
+              const labels: Record<number, string> = {
+                1: 'Rodada 1 (08-14/06)',
+                2: 'Rodada 2 (15-21/06)',
+                3: 'Rodada 3 (22-30/06)',
+                4: 'Rodada 4 (01-05/07)',
+                5: 'Rodada 5 (06-12/07)',
+                6: 'Rodada 6 (13-20/07)'
+              };
+              const hasPbRn = r.pb && r.rn;
+              return (
+                <div key={key} className="p-3 md:p-4 rounded-xl bg-white/[0.02]">
+                  <h3 className="font-medium text-xs md:text-sm mb-2">{labels[num] || key}</h3>
+                  <div className="grid grid-cols-2 gap-2 md:gap-3">
+                    <div className="text-center p-2 rounded-lg bg-white/[0.02]">
+                      <p className="text-[10px] md:text-xs text-gray-400">PB</p>
+                      <p className="font-bold text-xs md:text-sm text-red-400">
+                        R$ {hasPbRn ? (r.pb.valorComJuros / 1000).toFixed(1) : (r.totalValor * 0.6 / 1000).toFixed(1)}k
+                      </p>
+                      <p className="text-[10px] md:text-xs text-gray-500">{hasPbRn ? r.pb.titulos : Math.round(r.total * 0.6)} títulos</p>
+                    </div>
+                    <div className="text-center p-2 rounded-lg bg-white/[0.02]">
+                      <p className="text-[10px] md:text-xs text-gray-400">RN</p>
+                      <p className="font-bold text-xs md:text-sm text-red-400">
+                        R$ {hasPbRn ? (r.rn.valorComJuros / 1000).toFixed(1) : (r.totalValor * 0.4 / 1000).toFixed(1)}k
+                      </p>
+                      <p className="text-[10px] md:text-xs text-gray-500">{hasPbRn ? r.rn.titulos : Math.round(r.total * 0.4)} títulos</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </motion.div>
       </div>

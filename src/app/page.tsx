@@ -20,20 +20,27 @@ export default function HomePage() {
 
   const totalGeral = rodadas.reduce((a, r) => a + r.totalRodada, 0);
   const totalGols = rodadas.reduce((a, r) => a + r.totalGols, 0);
-  const totalClientes = rodadasData.clientesNovos.rodada1.total + rodadasData.clientesNovos.rodada2.total;
+  const totalClientes = Object.values(rodadasData.clientesNovos).reduce((a: number, r: any) => a + (r.total || 0), 0);
 
   const rankingGeral = selecoes.map(sel => {
-    const r1 = rodadas[0].selecoes.find(s => s.nome === sel.nome);
-    const r2 = rodadas[1].selecoes.find(s => s.nome === sel.nome);
-    const totalVendido = (r1?.totalVendido || 0) + (r2?.totalVendido || 0);
-    const totalGols = (r1?.totalGols || 0) + (r2?.totalGols || 0);
+    let totalVendido = 0;
+    let totalGols = 0;
+    let numJogadores = 0;
+    rodadas.forEach(rodada => {
+      const s = rodada.selecoes.find((s: any) => s.nome === sel.nome);
+      if (s) {
+        totalVendido += s.totalVendido || 0;
+        totalGols += s.totalGols || 0;
+        numJogadores = Math.max(numJogadores, s.jogadores.length);
+      }
+    });
     return {
       ...sel,
       totalVendido,
       totalGols,
-      jogadores: r1?.jogadores.length || 0
+      jogadores: numJogadores
     };
-  }).sort((a, b) => b.totalVendido - a.totalVendido);
+  }).sort((a: any, b: any) => b.totalVendido - a.totalVendido);
 
   const melhorJogador = rodadas.flatMap(r => 
     r.selecoes.flatMap(s => 
@@ -309,7 +316,7 @@ export default function HomePage() {
             Resumo por Rodada
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
             {rodadas.map((rodada, index) => (
               <div key={rodada.numero} className="glass-card p-4 md:p-5">
                 <div className="flex items-center justify-between mb-3 md:mb-4">
