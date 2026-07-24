@@ -3544,98 +3544,92 @@
       ]
     },
     "rodada4": {
-      "total": 2,
-      "totalValor": 905.43,
+      "total": 1,
+      "totalValor": 315.82,
       "clientes": [
         {
           "rca": 10,
           "nome": "Heverton",
           "cliente": "Cliente",
           "valor": 315.82
-        },
-        {
-          "rca": 166,
-          "nome": "Francielle",
-          "cliente": "Cliente",
-          "valor": 589.61
         }
       ]
     },
     "rodada5": {
-      "total": 4,
-      "totalValor": 3489.33,
+      "total": 3,
+      "totalValor": 9629.75,
       "clientes": [
-        {
-          "rca": 10,
-          "nome": "Heverton",
-          "cliente": "Cliente",
-          "valor": 400.88
-        },
         {
           "rca": 166,
           "nome": "Francielle",
           "cliente": "Cliente",
-          "valor": 589.61
+          "valor": 6650.09
         },
         {
           "rca": 84,
           "nome": "Rafael",
           "cliente": "Cliente",
-          "valor": 500.0
+          "valor": 701.1
         },
         {
           "rca": 317,
           "nome": "Klenio",
           "cliente": "Cliente",
-          "valor": 1998.84
+          "valor": 2278.56
         }
       ]
     },
     "rodada6": {
-      "total": 40,
-      "totalValor": 68270.94,
+      "total": 15,
+      "totalValor": 62105.29,
       "clientes": [
         {
           "rca": 10,
           "nome": "Heverton",
           "cliente": "Cliente",
-          "valor": 0
+          "valor": 17743.87
         },
         {
           "rca": 34,
-          "nome": "Renato",
+          "nome": "Josival",
           "cliente": "Cliente",
-          "valor": 0
+          "valor": 2509.14
+        },
+        {
+          "rca": 64,
+          "nome": "Ruan",
+          "cliente": "Cliente",
+          "valor": 1169.15
         },
         {
           "rca": 145,
-          "nome": "Wanderley",
+          "nome": "Jorivandro",
           "cliente": "Cliente",
-          "valor": 0
+          "valor": 7809.72
         },
         {
           "rca": 166,
           "nome": "Francielle",
           "cliente": "Cliente",
-          "valor": 0
+          "valor": 3126.42
+        },
+        {
+          "rca": 188,
+          "nome": "Camila",
+          "cliente": "Cliente",
+          "valor": 2927.8
         },
         {
           "rca": 208,
           "nome": "Oscar",
           "cliente": "Cliente",
-          "valor": 803.8
-        },
-        {
-          "rca": 255,
-          "nome": "Kaua",
-          "cliente": "Cliente",
-          "valor": 1163.49
+          "valor": 3832.87
         },
         {
           "rca": 265,
           "nome": "Marcondes",
           "cliente": "Cliente",
-          "valor": 4321.78
+          "valor": 2639.12
         },
         {
           "rca": 268,
@@ -3674,12 +3668,6 @@
           "valor": 1217.69
         },
         {
-          "rca": 81,
-          "nome": "Pedro",
-          "cliente": "Cliente",
-          "valor": 2252.2
-        },
-        {
           "rca": 84,
           "nome": "Rafael",
           "cliente": "Cliente",
@@ -3689,13 +3677,13 @@
           "rca": 90,
           "nome": "Geraldo",
           "cliente": "Cliente",
-          "valor": 4087.91
+          "valor": 1282.56
         },
         {
           "rca": 91,
           "nome": "Diego",
           "cliente": "Cliente",
-          "valor": 5073.88
+          "valor": 2576.61
         },
         {
           "rca": 317,
